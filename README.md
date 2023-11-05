@@ -362,18 +362,32 @@
 ## Check Box
 ### Theme 
  ```bash
- Theme"
- Theme"
+    checkboxTheme: CheckboxThemeData(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5),
+      ),
+      checkColor: MaterialStateProperty.all(whiteColor),
+      fillColor: MaterialStateProperty.all(Colors.transparent),
+    ),
  ```
 ### Component
  ```bash
- Component"
- Component"
+        Checkbox(
+          activeColor: Colors.green,
+          value: controller.isCheck,
+          onChanged: (bool? value) {
+          controller.updateCheckBox(value!);
+          },
+        ),
  ```
 ### Controller
  ```bash
- Controller"
- Controller"
+  bool isCheck = false;
+
+  void updateCheckBox(bool value) {
+    isCheck = value;
+    update();
+  }
  ```
 
 ## Chip 

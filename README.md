@@ -4,7 +4,7 @@
 
 
 # Common Buttons
-# Elevated Button
+## Elevated Button
 ### Theme 
  ```bash
  elevatedButtonTheme: ElevatedButtonThemeData(
@@ -32,7 +32,7 @@
           )
  ```
 
-# Filled Button
+## Filled Button
 ### Theme 
  ```bash
  Theme"
@@ -43,7 +43,7 @@
  Component"
  Component"
  ```
-# Filled Button Tonal
+## Filled Button Tonal
 ### Theme 
  ```bash
  Theme"
@@ -54,7 +54,7 @@
  Component"
  Component"
  ```
-# Outlined Button 
+## Outlined Button 
 ### Theme 
  ```bash
  outlinedButtonTheme: OutlinedButtonThemeData(
@@ -83,7 +83,7 @@ OutlinedButton(
               ),
                    
  ```
-# Text Button 
+## Text Button 
 ### Theme 
  ```bash
    textButtonTheme: TextButtonThemeData(
@@ -138,8 +138,6 @@ TextButton(
                   backgroundColor: MaterialStatePropertyAll(Colors.green),
                 ),
               ),
-              
-
  ```
 ### Component
  ```bash
@@ -147,19 +145,53 @@ TextButton(
               onPressed: () {},
               icon: const Icon(Icons.save),
             ),
-          
  ```
 
 ## Segmented Button
 ### Theme 
  ```bash
- Theme"
- Theme"
+ segmentedButtonTheme: SegmentedButtonThemeData(
+     style: ButtonStyle(
+     backgroundColor:  MaterialStatePropertyAll(Colors.white),
+    foregroundColor: MaterialStatePropertyAll(Colors.black),
+                        ),
+              )
  ```
+ ### Controller
+  ```bash
+
+  Set <String> selection = {'S','M','L'};
+   List<ButtonSegment<String>> selectionSegment = [
+    ButtonSegment<String>(value: 'small', label: Text('S')),
+    ButtonSegment<String>(value: 'medium', label: Text('M')),
+    ButtonSegment<String>(value: 'large', label: Text('L')),
+  ];
+
+   void updateSelection(Set<String> newSelection) 
+    {
+    selection = newSelection;
+    update();
+  }
+  ```
 ### Component
  ```bash
- Component"
- Component"
+  GetBuilder<Controller>(builder: (controller) {
+                      return SegmentedButton<String>
+                      (
+                        segments: controller.selectionSegment,
+                        selected: controller.selection,
+                        onSelectionChanged: (Set<String> newSelection) {
+                          controller.updateSelection(newSelection);
+                        },
+                        multiSelectionEnabled: true,
+                        showSelectedIcon: false,
+
+                      );
+                    })
+                  
+                  
+                  
+                  
  ```
 
 
@@ -169,20 +201,55 @@ TextButton(
 # Communication
 
 ## Badge
-### Theme 
+### package
  ```bash
- Theme"
- Theme"
+ badges: ^3.1.2
+
  ```
 ### Component
  ```bash
- Component"
- Component"
+ GetBuilder<Controller>(builder: (controller) {
+  return badges.Badge(
+    position: BadgePosition.topEnd(top: 0, end: 3),
+    showBadge: true,
+    badgeContent: Text(
+      controller.quantity().toString(),
+      style: const TextStyle(color: Colors.color),
+    ),
+    badgeAnimation: const badges.BadgeAnimation.slide(
+      loopAnimation: false,
+      curve: Curves.fastOutSlowIn,
+    ),
+    badgeStyle: const badges.BadgeStyle(
+      shape: badges.BadgeShape.circle,
+      borderSide: BorderSide(color: Color, width: 2),
+      elevation: 0,
+    ),
+    child: IconButton(
+      onPressed: () {
+    
+      },
+      icon: const Icon(Icons.icon),
+    ),
+  );
+});
  ```
 ### Controller
+
+using List to counting the number in Badges.
  ```bash
- Controller"
- Controller"
+List<Model> list = [];
+ ```
+
+
+ ```
+ int quantity() {
+  if (list.isEmpty) {
+    return 0;
+  } else {
+    return list
+       .length;
+  }
  ```
 
 ## Linear Progress Inictor
@@ -299,7 +366,7 @@ bottomSheetTheme: const BottomSheetThemeData(
 
 ### Theme 
  ```bash
-    dividerColor: Colors.transparent,
+    dividerColor: greyCoffeeColor,
  ```
 ### Component
  ```bash
@@ -307,23 +374,67 @@ bottomSheetTheme: const BottomSheetThemeData(
   thickness: 2,
   ),
  ```
-
 ## List Tile
+<img width="437" alt="Screen Shot 1445-04-22 at 11 40 10 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/e5bbfa8a-9fc7-49b8-ab3c-cb652680ee01">
+
 ### Theme 
  ```bash
- Theme"
- Theme"
+  listTileTheme: const ListTileThemeData(
+        textColor: Colors.black,        
+      ),
  ```
 ### Component
  ```bash
- Component"
- Component"
+  ListTile(
+            leading: CircleAvatar(child: Text('B')),
+            title: Text('Headline'),
+            subtitle: Text(
+           'Longer supporting text to demonstrate how the text.'),
+          ),
  ```
 ### Controller
  ```bash
  Controller"
  Controller"
  ```
+
+## Grid view 
+
+<img width="314" alt="Screen Shot 1445-04-22 at 11 25 30 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/e0ed3a15-cd0a-4f85-9e86-2ff8c58a78fc">
+
+
+### Component
+ ```bash
+    GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.93,
+              childAspectRatio: 0.8,
+              mainAxisSpacing: 8.0,
+              crossAxisSpacing: 10.0,
+              maxCrossAxisExtent: 200,
+            ),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 2,
+            itemBuilder: (_, index) {
+              return Widget();
+            },
+          );
+
+ ```
+
+## List View
+
+### Component
+ ```bash
+ ListView.builder(
+          itemCount: 3,
+          itemBuilder: (BuildContext context, int index) {
+            return widget() 
+           },
+ ```
+
 
 ![Navigation](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/7beb3d9d-d526-4674-b51c-a4c9e4c37fb3)
 
@@ -358,24 +469,24 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading:        
-      IconButton(
-            icon: const Icon(Icons.add_alert),
-            tooltip: 'Show Snackbar',
-            onPressed: () {
-             
-            },
-          ),
-      centerTitle: true
+      leading: IconButton(
+      onPressed: () {},
+      icon: Icon(Icons.add_alert),
+    ),
+      centerTitle: true,
       title: const Text('title'),
-      actions:
-      [
-        TextButton(
-          style: style,
-          onPressed: () {},
-          child: const Text('Action 1'),
+      actions: [
+          TextButton(
+            style: style,
+            onPressed: () {},
+            child: const Text('Action 1'),
           ),
-      ],
+          TextButton(
+            style: style,
+            onPressed: () {},
+            child: const Text('Action 2'),
+          ),
+        ],
     );
   }
 }

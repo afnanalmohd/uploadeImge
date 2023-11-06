@@ -740,20 +740,87 @@ ChoiceChip(
  ```
 
 ## Date Picker
-### Theme 
+### Pakage 
  ```bash
- Theme"
- Theme"
+  syncfusion_flutter_datepicker: ^22.1.37
  ```
 ### Component
  ```bash
- Component"
- Component"
+
+class CalendarWidget extends StatelessWidget {
+  final DateRangePickerSelectionChangedCallback? onSelectionChanged;
+  final DateRangePickerSelectionMode selectionMode;
+
+ const CalendarWidget(
+      {super.key,
+      required this.onSelectionChanged,
+      required this.selectionMode});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return SfDateRangePicker(
+      minDate: DateTime.now().subtract(const Duration(days: -1)),
+      view: DateRangePickerView.month,
+      monthViewSettings: DateRangePickerMonthViewSettings(
+          viewHeaderStyle: DateRangePickerViewHeaderStyle(
+              textStyle: textTheme.bodySmall?.copyWith(fontSize: 12))),
+      headerStyle: DateRangePickerHeaderStyle(
+        textStyle: textTheme.displaySmall,
+      ),
+      monthCellStyle: DateRangePickerMonthCellStyle(
+          todayTextStyle: textTheme.displaySmall,
+          textStyle: textTheme.headlineLarge?.copyWith(fontSize: 12)),
+      yearCellStyle: DateRangePickerYearCellStyle(
+          todayTextStyle: textTheme.displaySmall,
+          textStyle: textTheme.displaySmall),
+      todayHighlightColor: primaryOrangeColor,
+      endRangeSelectionColor: primaryOrangeColor,
+      rangeSelectionColor: primaryOrangeColor,
+      selectionColor: primaryOrangeColor,
+      startRangeSelectionColor: primaryOrangeColor,
+      onSelectionChanged: onSelectionChanged,
+      selectableDayPredicate: controller.disableDate,
+      selectionMode: selectionMode,
+    );
+  }
+}
  ```
 ### Controller
  ```bash
- Controller"
- Controller"
+  String? startDate;
+  String? endDate;
+  String? rangeDate = DateFormat('yyyy-MM-dd')
+      .format(DateTime.now().toLocal().subtract(const Duration(days: -1)));
+
+  void onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
+    if (args.value is PickerDateRange) {
+      if (args.value.endDate == null ||
+          args.value.startDate == args.value.endDate) {
+        startDate =
+            DateFormat('yyyy-MM-dd').format(args.value.startDate).toString();
+        endDate =
+            DateFormat('yyyy-MM-dd').format(args.value.startDate).toString();
+        rangeDate = startDate;
+      } else {
+        startDate = DateFormat('yyyy-MM-dd').format(args.value.startDate);
+        endDate = DateFormat('yyyy-MM-dd').format(args.value.endDate);
+        rangeDate = '$startDate - $endDate';
+      }
+    }
+    update();
+  }
+
+ bool disableDate(DateTime day) {
+    if ((day.isAfter(
+      DateTime.now().subtract(
+        const Duration(days: 0),
+      ),
+    ))) {
+      return true;
+    }
+    return false;
+  }
  ```
 
 ## Dropdown Menu

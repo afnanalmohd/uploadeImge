@@ -41,13 +41,31 @@
 # Outlined Button 
 ### Theme 
  ```bash
- Theme"
- Theme"
+ outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+      foregroundColor: primaryOrangeColor,
+      textStyle: const TextStyle(
+        fontFamily: 'GE-SS-Two',
+        fontWeight: FontWeight.w300,
+        color: primaryOrangeColor,
+        fontSize: 16,
+      ),
+      side: const BorderSide(color: primaryOrangeColor),
+      disabledBackgroundColor: primaryBananaColor,
+      minimumSize: const Size(398, 48),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+      elevation: 0.0,
+      backgroundColor: whiteColor,
+    )),
  ```
 ### Component
  ```bash
- Component"
- Component"
+OutlinedButton(
+               
+                onPressed:  ()  {}
+                child: const Text('press here'),
+              ),
+                   
  ```
 # Text Button 
 ### Theme 

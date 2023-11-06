@@ -159,10 +159,10 @@ List<Model> list = [];
 
  ```
  int quantity() {
-  if (List.isEmpty) {
+  if (list.isEmpty) {
     return 0;
   } else {
-    return List
+    return list
        .length;
   }
  ```

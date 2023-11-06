@@ -224,21 +224,42 @@ TextButton(
 # Containment
 
 ## Alert Dialog
+<img width="260" alt="Screen Shot 1445-04-22 at 12 34 45 PM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/f396e681-63d3-4370-bef6-91fcaaa5b391">
+
 ### Theme 
  ```bash
- Theme"
- Theme"
+ dialogTheme: const DialogTheme(
+        backgroundColor: greyCoffeeColor,
+        shadowColor: Colors.white,
+      )
  ```
 ### Component
  ```bash
- Component"
- Component"
+Dialog(
+     child: Column(
+      children: [
+        const Text(
+          'are YouSure Cancel',
+        ),
+        Row(
+          children: [
+            OutlinedButton(
+              onPressed: () {},
+              child: Text(
+                'No',
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('yes'),
+            ),
+          ],
+        ),
+      ],
+    )
+);
  ```
-### Controller
- ```bash
- Controller"
- Controller"
- ```
+
 
 ## Bottom Sheet 
 ![material-3-bottom-sheet](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/aaa67772-6af6-4437-98a1-ff35025f0a31)

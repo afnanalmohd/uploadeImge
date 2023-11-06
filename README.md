@@ -267,18 +267,84 @@ List<Model> list = [];
 ## Linear Progress Inictor
 ### Theme 
  ```bash
- Theme"
- Theme"
+ progressIndicatorTheme: const ProgressIndicatorThemeData(
+      linearMinHeight: 2.0,
+      color: Colors.color,
+    ),
  ```
 ### Component
  ```bash
- Component"
- Component"
+       GetBuilder<controller>(
+                builder: (controller) {
+                  return LinearProgressIndicator(
+                    color: Colors.color,
+                    value: controller.progress,
+                  );
+                },
+              ),
+    ElevatedButton(
+                onPressed: () async {
+                  await controller.startProgress();
+                },
+                child: const Text('test'),
+              ),
  ```
 ### Controller
  ```bash
- Controller"
- Controller"
+ double progress = 0.0;
+  Future<void> startProgress() async {
+    int totalSteps = 100;
+    for (int currentStep = 0; currentStep < totalSteps; currentStep++) {
+      await Future.delayed(const Duration(milliseconds: 100));
+      progress = (currentStep / totalSteps).toDouble();
+      update();
+    }
+  }
+  
+
+  
+ ```
+
+
+
+## Circular Progress Inictor
+### Theme 
+ ```bash
+ progressIndicatorTheme: const ProgressIndicatorThemeData(
+      linearMinHeight: 2.0,
+      color: Colors.color,
+    ),
+ ```
+### Component
+ ```bash
+    GetBuilder<controller>(
+                builder: (controller) {
+                  return CircularProgressIndicator(
+                    color: Colors.color,
+                    value: controller.progress,
+                  );
+                },
+              ),
+ ElevatedButton(
+                onPressed: () async {
+                  await controller.startProgress();
+                },
+                child: const Text('test'),
+              ),
+
+ ```
+### Controller
+ ```bash
+ double progress = 0.0;
+  Future<void> startProgress() async {
+    int totalSteps = 100;
+    for (int currentStep = 0; currentStep < totalSteps; currentStep++) {
+      await Future.delayed(const Duration(milliseconds: 100));
+      progress = (currentStep / totalSteps).toDouble();
+      update();
+    }
+  }
+   
  ```
 
 ## Snack Bar

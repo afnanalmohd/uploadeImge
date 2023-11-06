@@ -52,13 +52,21 @@
 # Text Button 
 ### Theme 
  ```bash
- Theme"
- Theme"
+   textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        disabledBackgroundColor: greyCoinColor,
+        foregroundColor: greyCoinColor,
+      ),
+    ),
  ```
 ### Component
  ```bash
- Component"
- Component"
+TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'press here',
+                  ),
+                ),
  ```
 
 ## Floating Action Button

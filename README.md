@@ -545,18 +545,47 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 ## Navigation Bar
 ### Theme 
  ```bash
- Theme"
- Theme"
+      navigationBarTheme: NavigationBarThemeData(
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          shadowColor: Colors.grey.shade400,
+          indicatorColor: Colors.blue)
  ```
 ### Component
  ```bash
- Component"
- Component"
+ NavigationBar(
+          selectedIndex: controller.pageIndex.value,
+          onDestinationSelected: (int index) {
+    
+            controller.changeIndex(index);
+          },
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.abc), label: 'option1'),
+            NavigationDestination(icon: Icon(Icons.abc), label: 'option2'),
+            NavigationDestination(icon: Icon(Icons.abc), label: 'option3')
+          ],
+ ),
+ body: <Widget>[
+          Container(
+            alignment: Alignment.center,
+            child: const Text('Page 1'),
+          ),
+          Container( 
+            alignment: Alignment.center,
+            child: const Text('Page 2'),
+          ),
+          Container(
+            alignment: Alignment.center,
+            child: const Text('Page 3'),
+          ),
+        ][controller.pageIndex],
  ```
 ### Controller
  ```bash
- Controller"
- Controller"
+ var pageIndex = 0;
+  changeIndex(int index) {
+    pageIndex = index;
+  }
  ```
 
 

@@ -205,20 +205,33 @@
  ```
 
 ## Card
+<img width="297" alt="Screen Shot 1445-04-22 at 9 59 35 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/5aebd906-92bb-412a-854a-dbbce0a86942">
+
 ### Theme 
  ```bash
- Theme"
- Theme"
+  cardTheme: const CardTheme(
+      elevation: 0.0,
+      color: whiteColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(4)),
+      ),
+    ),
  ```
 ### Component
  ```bash
- Component"
- Component"
- ```
-### Controller
- ```bash
- Controller"
- Controller"
+    Card(
+        child: Column(
+          children: [
+            SizedBox(
+              height: size.height / 29.2,
+            ),
+            Text(" Extras", style: textTheme.displayLarge),
+            SizedBox(
+              height: size.height / 56.26,
+            ),
+          ],
+        ),
+      );
  ```
 
 ## Divider

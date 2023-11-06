@@ -100,13 +100,48 @@
 ## Segmented Button
 ### Theme 
  ```bash
- Theme"
- Theme"
+ segmentedButtonTheme: SegmentedButtonThemeData(
+     style: ButtonStyle(
+     backgroundColor:  MaterialStatePropertyAll(Colors.white),
+    foregroundColor: MaterialStatePropertyAll(Colors.black),
+                        ),
+              )
  ```
+ ### Controller
+  ```bash
+
+  Set <String> selection = {'S','M','L'};
+   List<ButtonSegment<String>> selectionSegment = [
+    ButtonSegment<String>(value: 'small', label: Text('S')),
+    ButtonSegment<String>(value: 'medium', label: Text('M')),
+    ButtonSegment<String>(value: 'large', label: Text('L')),
+  ];
+
+   void updateSelection(Set<String> newSelection) 
+    {
+    selection = newSelection;
+    update();
+  }
+  ```
 ### Component
  ```bash
- Component"
- Component"
+  GetBuilder<Controller>(builder: (controller) {
+                      return SegmentedButton<String>
+                      (
+                        segments: controller.selectionSegment,
+                        selected: controller.selection,
+                        onSelectionChanged: (Set<String> newSelection) {
+                          controller.updateSelection(newSelection);
+                        },
+                        multiSelectionEnabled: true,
+                        showSelectedIcon: false,
+
+                      );
+                    })
+                  
+                  
+                  
+                  
  ```
 
 

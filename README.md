@@ -7,13 +7,29 @@
 # Elevated Button
 ### Theme 
  ```bash
- Theme"
- Theme"
+ elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+      textStyle: const TextStyle(
+        fontFamily: 'GE-SS-Two',
+        fontWeight: FontWeight.w500,
+        color: whiteColor,
+        fontSize: 16,
+      ),
+      disabledBackgroundColor: primaryBananaColor,
+      disabledForegroundColor: whiteColor,
+      minimumSize: const Size(398, 48),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      elevation: 0.0,
+      backgroundColor: primaryOrangeColor,
+    )),
  ```
 ### Component
  ```bash
- Component"
- Component"
+   ElevatedButton(
+            onPressed: () {
+            },
+            child: const Text('press here'),
+          )
  ```
 
 # Filled Button
@@ -41,24 +57,50 @@
 # Outlined Button 
 ### Theme 
  ```bash
- Theme"
- Theme"
+ outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+      foregroundColor: primaryOrangeColor,
+      textStyle: const TextStyle(
+        fontFamily: 'GE-SS-Two',
+        fontWeight: FontWeight.w300,
+        color: primaryOrangeColor,
+        fontSize: 16,
+      ),
+      side: const BorderSide(color: primaryOrangeColor),
+      disabledBackgroundColor: primaryBananaColor,
+      minimumSize: const Size(398, 48),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+      elevation: 0.0,
+      backgroundColor: whiteColor,
+    )),
  ```
 ### Component
  ```bash
- Component"
- Component"
+OutlinedButton(
+               
+                onPressed:  ()  {}
+                child: const Text('press here'),
+              ),
+                   
  ```
 # Text Button 
 ### Theme 
  ```bash
- Theme"
- Theme"
+   textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        disabledBackgroundColor: greyCoinColor,
+        foregroundColor: greyCoinColor,
+      ),
+    ),
  ```
 ### Component
  ```bash
- Component"
- Component"
+TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'press here',
+                  ),
+                ),
  ```
 
 ## Floating Action Button
@@ -88,12 +130,21 @@
 ## Icon Button
 ### Theme 
  ```bash
- Theme"
- Theme"
+              iconTheme: const IconThemeData(color: Colors.red),
+              primaryIconTheme: const IconThemeData(color: Colors.blue),
+              iconButtonTheme: const IconButtonThemeData(
+                style: ButtonStyle(
+                  foregroundColor: MaterialStatePropertyAll(Colors.green),
+                  backgroundColor: MaterialStatePropertyAll(Colors.green),
+                ),
+              ),
  ```
 ### Component
- ```bashshadowColor
- Component"
+ ```bash
+ IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.save),
+            ),
  ```
 
 ## Segmented Button
@@ -253,6 +304,55 @@ bottomSheetTheme: const BottomSheetThemeData(
   thickness: 2,
   ),
  ```
+## List Tile
+<img width="437" alt="Screen Shot 1445-04-22 at 11 40 10 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/e5bbfa8a-9fc7-49b8-ab3c-cb652680ee01">
+
+### Theme 
+ ```bash
+  listTileTheme: const ListTileThemeData(
+        textColor: Colors.black,        
+      ),
+ ```
+### Component
+ ```bash
+  ListTile(
+            leading: CircleAvatar(child: Text('B')),
+            title: Text('Headline'),
+            subtitle: Text(
+           'Longer supporting text to demonstrate how the text.'),
+          ),
+ ```
+### Controller
+ ```bash
+ Controller"
+ Controller"
+ ```
+
+## Grid view 
+
+<img width="314" alt="Screen Shot 1445-04-22 at 11 25 30 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/e0ed3a15-cd0a-4f85-9e86-2ff8c58a78fc">
+
+
+### Component
+ ```bash
+    GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.93,
+              childAspectRatio: 0.8,
+              mainAxisSpacing: 8.0,
+              crossAxisSpacing: 10.0,
+              maxCrossAxisExtent: 200,
+            ),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 2,
+            itemBuilder: (_, index) {
+              return Widget();
+            },
+          );
+
+ ```
 
 ## List View
 
@@ -273,13 +373,53 @@ bottomSheetTheme: const BottomSheetThemeData(
 ## App Bar
 ### Theme 
  ```bash
- Theme"
- Theme"
+appBarTheme: const AppBarTheme(
+    titleTextStyle: TextStyle(
+        fontFamily: 'Mona-Sans',
+        fontWeight: FontWeight.w800,
+        fontSize: 20,
+        color: mainColor),
+    systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.light,
+    ),
+    elevation: 0.5,
+    backgroundColor: whiteColor,
+    iconTheme: IconThemeData(color: greyMirageColor)),
  ```
 ### Component
  ```bash
- Component"
- Component"
+class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+  const AppBarWidget({super.key});
+
+  
+  @override
+  Size get preferredSize => const Size.fromHeight(60);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      leading: IconButton(
+      onPressed: () {},
+      icon: Icon(Icons.add_alert),
+    ),
+      centerTitle: true,
+      title: const Text('title'),
+      actions: [
+          TextButton(
+            style: style,
+            onPressed: () {},
+            child: const Text('Action 1'),
+          ),
+          TextButton(
+            style: style,
+            onPressed: () {},
+            child: const Text('Action 2'),
+          ),
+        ],
+    );
+  }
+}
  ```
 
 ## Bottom App Bar 
@@ -354,19 +494,38 @@ bottomSheetTheme: const BottomSheetThemeData(
 ## Tab Bar
 ### Theme 
  ```bash
- Theme"
- Theme"
+tabBarTheme: TabBarTheme(
+        labelColor: Colors.white,
+        indicatorColor: Colors.blue.shade800,
+        overlayColor: MaterialStateProperty.all(Colors.blue.shade300),
+      )
  ```
 ### Component
  ```bash
- Component"
- Component"
+DefaultTabController(
+      initialIndex: 1,
+      length: 3,
+      child:Scaffold(
+        appBar: AppBar(
+          bottom:TabBar(
+            tabs:[
+            Tab(text:'Car'),
+            Tab(text:'Plane'),
+            Tab(text:'Boat'),
+            ],
+          ),
+        ),
+        body:TabBarView(
+          children:[
+            CarWidget(),
+            PlaneWidget(),
+            BoatWidget(),
+          ],
+        ),
+      ),
+),
  ```
-### Controller
- ```bash
- Controller"
- Controller"
- ```
+
 
 ![Selection](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/5bce0425-b463-4aa1-996c-83f1ae4fba53)
 

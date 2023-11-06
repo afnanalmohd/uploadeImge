@@ -4,7 +4,7 @@
 
 
 # Common Buttons
-# Elevated Button
+## Elevated Button
 ### Theme 
  ```bash
  elevatedButtonTheme: ElevatedButtonThemeData(
@@ -32,7 +32,7 @@
           )
  ```
 
-# Filled Button
+## Filled Button
 ### Theme 
  ```bash
  Theme"
@@ -43,7 +43,7 @@
  Component"
  Component"
  ```
-# Filled Button Tonal
+## Filled Button Tonal
 ### Theme 
  ```bash
  Theme"
@@ -54,7 +54,7 @@
  Component"
  Component"
  ```
-# Outlined Button 
+## Outlined Button 
 ### Theme 
  ```bash
  outlinedButtonTheme: OutlinedButtonThemeData(
@@ -83,7 +83,7 @@ OutlinedButton(
               ),
                    
  ```
-# Text Button 
+## Text Button 
 ### Theme 
  ```bash
    textButtonTheme: TextButtonThemeData(

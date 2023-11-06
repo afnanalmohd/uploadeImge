@@ -7,13 +7,29 @@
 # Elevated Button
 ### Theme 
  ```bash
- Theme"
- Theme"
+ elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+      textStyle: const TextStyle(
+        fontFamily: 'GE-SS-Two',
+        fontWeight: FontWeight.w500,
+        color: whiteColor,
+        fontSize: 16,
+      ),
+      disabledBackgroundColor: primaryBananaColor,
+      disabledForegroundColor: whiteColor,
+      minimumSize: const Size(398, 48),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      elevation: 0.0,
+      backgroundColor: primaryOrangeColor,
+    )),
  ```
 ### Component
  ```bash
- Component"
- Component"
+   ElevatedButton(
+            onPressed: () {
+            },
+            child: const Text('press here'),
+          )
  ```
 
 # Filled Button

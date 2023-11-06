@@ -158,6 +158,53 @@ TextButton(
  Component"
  Component"
  ```
+## Toggle Button
+### Theme 
+ ```bash
+toggleButtonsTheme: ToggleButtonsThemeData(
+        color: blackColor,
+              selectedColor: whiteColor,
+              fillColor: Colors.transparent,
+              borderWidth: 0,
+              borderColor: Colors.transparent,
+      )
+ ```
+ ### Controller 
+ ```bash
+  List<bool> get isSelectedList
+   {
+    return List.generate(2, (index) => selectedIndex == index);
+  }
+
+  selectIndex(int index) {
+    selectedIndex = index;
+    update();
+  }
+ ```
+### Component
+ ```bash
+  GetBuilder<Controller>(
+                         builder: (controller) {
+                           return ToggleButtons(
+              children: [
+                TextButtonVenueWidget(
+                  index: 0,
+
+                  text: 'option 1',
+                ),
+                TextButtonVenueWidget(
+                  index: 1,
+
+                  text: 'option 2',
+                )
+              ],
+              isSelected: controller.isSelectedList,
+              onPressed: (int index) => controller.selectIndex(index),
+              constraints: BoxConstraints.expand(height: 60, width: size.width * 0.45),
+            );
+                         }
+                       ),
+ ```
 
 
 

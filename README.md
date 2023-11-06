@@ -412,18 +412,31 @@ bottomSheetTheme: const BottomSheetThemeData(
 ## Chip 
 ### Theme 
  ```bash
- Theme"
- Theme"
+  chipTheme: ChipThemeData(
+      secondarySelectedColor: whiteColor,
+      secondaryLabelStyle: const TextStyle(color: primaryOrangeColor),
+      backgroundColor: whiteColor,
+      disabledColor: whiteColor,
+      selectedColor: whiteColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: const BorderSide(
+          color: greySteelColor,
+        ),
+      ),
+    ),
  ```
 ### Component
  ```bash
- Component"
- Component"
- ```
-### Controller
- ```bash
- Controller"
- Controller"
+ChoiceChip(
+          selectedColor: whiteColor,
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          label: const Text('item'),
+          // selected chip value
+          selected: _value == index,
+          // onSelected method
+          onSelected: (bool selected) {},
+),
  ```
 
 ## Date Picker

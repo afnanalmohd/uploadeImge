@@ -308,6 +308,32 @@ bottomSheetTheme: const BottomSheetThemeData(
   ),
  ```
 
+## Grid view 
+
+<img width="314" alt="Screen Shot 1445-04-22 at 11 25 30 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/e0ed3a15-cd0a-4f85-9e86-2ff8c58a78fc">
+
+
+### Component
+ ```bash
+    GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.93,
+              childAspectRatio: 0.8,
+              mainAxisSpacing: 8.0,
+              crossAxisSpacing: 10.0,
+              maxCrossAxisExtent: 200,
+            ),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 2,
+            itemBuilder: (_, index) {
+              return Widget();
+            },
+          );
+
+ ```
+
 ## List Tile
 ### Theme 
  ```bash

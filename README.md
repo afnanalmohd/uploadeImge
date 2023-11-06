@@ -166,20 +166,55 @@ TextButton(
 # Communication
 
 ## Badge
-### Theme 
+### package
  ```bash
- Theme"
- Theme"
+ badges: ^3.1.2
+
  ```
 ### Component
  ```bash
- Component"
- Component"
+ GetBuilder<Controller>(builder: (controller) {
+  return badges.Badge(
+    position: BadgePosition.topEnd(top: 0, end: 3),
+    showBadge: true,
+    badgeContent: Text(
+      controller.quantity().toString(),
+      style: const TextStyle(color: Colors.color),
+    ),
+    badgeAnimation: const badges.BadgeAnimation.slide(
+      loopAnimation: false,
+      curve: Curves.fastOutSlowIn,
+    ),
+    badgeStyle: const badges.BadgeStyle(
+      shape: badges.BadgeShape.circle,
+      borderSide: BorderSide(color: Color, width: 2),
+      elevation: 0,
+    ),
+    child: IconButton(
+      onPressed: () {
+    
+      },
+      icon: const Icon(Icons.icon),
+    ),
+  );
+});
  ```
 ### Controller
+
+using List to counting the number in Badges.
  ```bash
- Controller"
- Controller"
+List<Model> list = [];
+ ```
+
+
+ ```
+ int quantity() {
+  if (list.isEmpty) {
+    return 0;
+  } else {
+    return list
+       .length;
+  }
  ```
 
 ## Linear Progress Inictor

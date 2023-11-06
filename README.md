@@ -92,8 +92,7 @@
  Theme"
  ```
 ### Component
- ```bash
- Component"
+ ```bashshadowColor
  Component"
  ```
 
@@ -246,7 +245,7 @@ bottomSheetTheme: const BottomSheetThemeData(
 
 ### Theme 
  ```bash
-    dividerColor: Colors.transparent,
+    dividerColor: greyCoffeeColor,
  ```
 ### Component
  ```bash
@@ -255,22 +254,17 @@ bottomSheetTheme: const BottomSheetThemeData(
   ),
  ```
 
-## List Tile
-### Theme 
- ```bash
- Theme"
- Theme"
- ```
+## List View
+
 ### Component
  ```bash
- Component"
- Component"
+ ListView.builder(
+          itemCount: 3,
+          itemBuilder: (BuildContext context, int index) {
+            return widget() 
+           },
  ```
-### Controller
- ```bash
- Controller"
- Controller"
- ```
+
 
 ![Navigation](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/7beb3d9d-d526-4674-b51c-a4c9e4c37fb3)
 

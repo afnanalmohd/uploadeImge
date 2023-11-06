@@ -116,7 +116,7 @@
 # Communication
 
 ## Badge
-### Installing
+### package
  ```bash
  badges: ^3.1.2
 
@@ -153,7 +153,7 @@
 
 using List to counting the number in Badges.
  ```bash
-List<Model> List = [];
+List<Model> list = [];
  ```
 
 

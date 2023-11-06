@@ -88,13 +88,24 @@
 ## Icon Button
 ### Theme 
  ```bash
- Theme"
- Theme"
+              iconTheme: const IconThemeData(color: Colors.red),
+              primaryIconTheme: const IconThemeData(color: Colors.blue),
+              iconButtonTheme: const IconButtonThemeData(
+                style: ButtonStyle(
+                  foregroundColor: MaterialStatePropertyAll(Colors.green),
+                  backgroundColor: MaterialStatePropertyAll(Colors.green),
+                ),
+              ),
+              
+
  ```
 ### Component
  ```bash
- Component"
- Component"
+ IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.save),
+            ),
+          
  ```
 
 ## Segmented Button

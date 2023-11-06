@@ -274,6 +274,10 @@ bottomSheetTheme: const BottomSheetThemeData(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 0.93,
+              childAspectRatio: 0.8,
+              mainAxisSpacing: 8.0,
+              crossAxisSpacing: 10.0,
+              maxCrossAxisExtent: 200,
             ),
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),

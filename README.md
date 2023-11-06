@@ -242,15 +242,17 @@ bottomSheetTheme: const BottomSheetThemeData(
  ```
 
 ## Divider
+<img width="297" alt="Screen Shot 1445-04-22 at 10 54 16 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/8d7c0fd4-4247-440b-b58a-1f47e7b1609f">
+
 ### Theme 
  ```bash
- Theme"
- Theme"
+    dividerColor: Colors.transparent,
  ```
 ### Component
  ```bash
- Component"
- Component"
+ const Divider(
+  thickness: 2,
+  ),
  ```
 
 ## List Tile

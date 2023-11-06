@@ -188,21 +188,28 @@
  ```
 
 ## Bottom Sheet 
+![material-3-bottom-sheet](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/aaa67772-6af6-4437-98a1-ff35025f0a31)
+
 ### Theme 
  ```bash
- Theme"
- Theme"
+bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: whiteColor,
+        elevation: 1.0,
+        modalElevation: 1.0,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(28.0))),
+      )
+);
  ```
 ### Component
  ```bash
- Component"
- Component"
+ Get.bottomSheet(
+                         ignoreSafeArea: false,
+                         isScrollControlled: true,
+                         Widget());
+
  ```
-### Controller
- ```bash
- Controller"
- Controller"
- ```
+
 
 ## Card
 ### Theme 

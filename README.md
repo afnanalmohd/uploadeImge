@@ -316,13 +316,53 @@ bottomSheetTheme: const BottomSheetThemeData(
 ## App Bar
 ### Theme 
  ```bash
- Theme"
- Theme"
+appBarTheme: const AppBarTheme(
+    titleTextStyle: TextStyle(
+        fontFamily: 'Mona-Sans',
+        fontWeight: FontWeight.w800,
+        fontSize: 20,
+        color: mainColor),
+    systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.light,
+    ),
+    elevation: 0.5,
+    backgroundColor: whiteColor,
+    iconTheme: IconThemeData(color: greyMirageColor)),
  ```
 ### Component
  ```bash
- Component"
- Component"
+class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+  const AppBarWidget({super.key});
+
+  
+  @override
+  Size get preferredSize => const Size.fromHeight(60);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      leading:        
+      IconButton(
+            icon: const Icon(Icons.add_alert),
+            tooltip: 'Show Snackbar',
+            onPressed: () {
+             
+            },
+          ),
+      centerTitle: true
+      title: const Text('title'),
+      actions:
+      [
+        TextButton(
+          style: style,
+          onPressed: () {},
+          child: const Text('Action 1'),
+          ),
+      ],
+    );
+  }
+}
  ```
 
 ## Bottom App Bar 

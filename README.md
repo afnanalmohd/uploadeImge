@@ -338,19 +338,38 @@
 ## Tab Bar
 ### Theme 
  ```bash
- Theme"
- Theme"
+tabBarTheme: TabBarTheme(
+        labelColor: Colors.white,
+        indicatorColor: Colors.blue.shade800,
+        overlayColor: MaterialStateProperty.all(Colors.blue.shade300),
+      )
  ```
 ### Component
  ```bash
- Component"
- Component"
+DefaultTabController(
+      initialIndex: 1,
+      length: 3,
+      child:Scaffold(
+        appBar: AppBar(
+          bottom:TabBar(
+            tabs:[
+            Tab(text:'Car'),
+            Tab(text:'Plane'),
+            Tab(text:'Boat'),
+            ],
+          ),
+        ),
+        body:TabBarView(
+          children:[
+            CarWidget(),
+            PlaneWidget(),
+            BoatWidget(),
+          ],
+        ),
+      ),
+),
  ```
-### Controller
- ```bash
- Controller"
- Controller"
- ```
+
 
 ![Selection](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/5bce0425-b463-4aa1-996c-83f1ae4fba53)
 

@@ -106,13 +106,18 @@ TextButton(
 ## Floating Action Button
 ### Theme 
  ```bash
- Theme"
- Theme"
+ floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: Colors.blue,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        elevation: 0.0,
+      )
  ```
 ### Component
  ```bash
- Component"
- Component"
+ FloatingActionButton(
+              onPressed: () {},
+              child: Icon(Icons.add),
+            ),
  ```
 
 ## Extended Floating Action Button 

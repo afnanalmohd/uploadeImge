@@ -291,6 +291,29 @@ bottomSheetTheme: const BottomSheetThemeData(
   thickness: 2,
   ),
  ```
+## List Tile
+<img width="437" alt="Screen Shot 1445-04-22 at 11 40 10 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/e5bbfa8a-9fc7-49b8-ab3c-cb652680ee01">
+
+### Theme 
+ ```bash
+  listTileTheme: const ListTileThemeData(
+        textColor: Colors.black,        
+      ),
+ ```
+### Component
+ ```bash
+  ListTile(
+            leading: CircleAvatar(child: Text('B')),
+            title: Text('Headline'),
+            subtitle: Text(
+           'Longer supporting text to demonstrate how the text.'),
+          ),
+ ```
+### Controller
+ ```bash
+ Controller"
+ Controller"
+ ```
 
 ## List Tile
 ### Theme 

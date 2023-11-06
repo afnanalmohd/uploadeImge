@@ -7,13 +7,29 @@
 # Elevated Button
 ### Theme 
  ```bash
- Theme"
- Theme"
+ elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+      textStyle: const TextStyle(
+        fontFamily: 'GE-SS-Two',
+        fontWeight: FontWeight.w500,
+        color: whiteColor,
+        fontSize: 16,
+      ),
+      disabledBackgroundColor: primaryBananaColor,
+      disabledForegroundColor: whiteColor,
+      minimumSize: const Size(398, 48),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      elevation: 0.0,
+      backgroundColor: primaryOrangeColor,
+    )),
  ```
 ### Component
  ```bash
- Component"
- Component"
+   ElevatedButton(
+            onPressed: () {
+            },
+            child: const Text('press here'),
+          )
  ```
 
 # Filled Button
@@ -437,19 +453,38 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 ## Tab Bar
 ### Theme 
  ```bash
- Theme"
- Theme"
+tabBarTheme: TabBarTheme(
+        labelColor: Colors.white,
+        indicatorColor: Colors.blue.shade800,
+        overlayColor: MaterialStateProperty.all(Colors.blue.shade300),
+      )
  ```
 ### Component
  ```bash
- Component"
- Component"
+DefaultTabController(
+      initialIndex: 1,
+      length: 3,
+      child:Scaffold(
+        appBar: AppBar(
+          bottom:TabBar(
+            tabs:[
+            Tab(text:'Car'),
+            Tab(text:'Plane'),
+            Tab(text:'Boat'),
+            ],
+          ),
+        ),
+        body:TabBarView(
+          children:[
+            CarWidget(),
+            PlaneWidget(),
+            BoatWidget(),
+          ],
+        ),
+      ),
+),
  ```
-### Controller
- ```bash
- Controller"
- Controller"
- ```
+
 
 ![Selection](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/5bce0425-b463-4aa1-996c-83f1ae4fba53)
 

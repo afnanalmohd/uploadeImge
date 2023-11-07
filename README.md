@@ -643,18 +643,34 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 ## Navigation Drawer
 ### Theme 
  ```bash
- Theme"
- Theme"
+navigationDrawerTheme: NavigationDrawerThemeData(
+            backgroundColor: Colors.blue.shade200,
+            tileHeight: 12,
+            shadowColor: Colors.black,
+            indicatorColor: Colors.blue.shade50,
+            indicatorShape: storage,
+            labelTextStyle: MaterialStatePropertyAll(TextStyle(fontFamily: fontFamily))
+          )
  ```
 ### Component
  ```bash
- Component"
- Component"
- ```
-### Controller
- ```bash
- Controller"
- Controller"
+  Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(child: Text('Header')),
+              ListTile(
+                title: Text('option1'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text('option2'),
+                onTap: () {},
+              ),
+            ],
+          ),
+        ),
+ ),
  ```
 
 ## Navigation Rail

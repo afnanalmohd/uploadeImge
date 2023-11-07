@@ -881,21 +881,83 @@ class CalendarWidget extends StatelessWidget {
   }
  ```
 
-## Dropdown Menu
-### Theme 
+## Dropdown Button
+### Package 
  ```bash
- Theme"
- Theme"
+  dropdown_button2: ^2.3.9
  ```
 ### Component
  ```bash
- Component"
- Component"
+DropdownButtonHideUnderline(child:
+DropdownButton2(
+            alignment: Alignment.centerRight,
+            isExpanded: true,
+            hint: const Text( "Chose ",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w200,
+                  color:Colors.grey ,
+              ),
+            ),
+            items: controller.item
+                .map((item) => DropdownMenuItem<String>(
+                      value: item,
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          item,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w200,
+                            color:Colors.black ,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ))
+                .toList(),
+            value: controller.selectedValue,
+            onChanged: (value) {
+              controller.updateSelectedValue(value.toString());
+            },
+            iconStyleData: const IconStyleData(
+              icon: Visibility(
+                visible: true,
+                child: Icon(Icons.keyboard_arrow_down),
+              ),
+            ),
+            buttonStyleData: ButtonStyleData(
+              height: size.height * 0.06,
+              width: size.width * 0.9,
+              padding: const EdgeInsets.only(left: 14, right: 14),
+              decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(5),
+                      topLeft: Radius.circular(5),
+                      bottomLeft: Radius.circular(0),
+                      bottomRight: Radius.circular(0)),
+                      color:Colors.white ,
+            ),
+            dropdownStyleData: DropdownStyleData(
+              decoration: BoxDecoration(
+              color:Colors.grey ,
+              maxHeight: size.height * 0.9,
+              width: size.width * 0.9,
+            ),
+            menuItemStyleData: const MenuItemStyleData(
+              height: 40,
+            ),
+          ));
  ```
 ### Controller
  ```bash
- Controller"
- Controller"
+  List<String> items = ["Option1", "Opchion2", "Other"];
+  UnmodifiableListView<String> get item => UnmodifiableListView(items);
+  String? selectedValue;
+  void updateSelectedValue(String value) {
+  selectedValue = value;
+  update();
+  }
  ```
 ### Pakege
  ```bash

@@ -329,21 +329,101 @@ List<Model> list = [];
  ```
 
 ## Snack Bar
+
+We recommend using the 'SnackBarWidget' if you have only one design.
+
 ### Theme 
  ```bash
- Theme"
- Theme"
+   snackBarTheme: const SnackBarThemeData(
+        actionTextColor: Colors.white,
+        backgroundColor: Colors.white,
+        contentTextStyle: TextStyle(color: Colors.white),
+        elevation: 20
+    ),
  ```
 ### Component
+
  ```bash
- Component"
- Component"
+    Get.snackbar(
+          'Title',
+          'test',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.white,
+          snackStyle: SnackStyle.FLOATING,
+        );
  ```
-### Controller
+
+
+
+## Snack Bar
+
+We recommend using the "GlobalSnackBar" class throughout the entire project, especially if there are various designs for SnackBars 
+such as warning, error, and success messages.
+### Theme 
  ```bash
- Controller"
- Controller"
+   snackBarTheme: const SnackBarThemeData(
+        actionTextColor: Colors.white,
+        backgroundColor: Colors.transparent,
+        contentTextStyle: TextStyle(color: Colors.black),
+        elevation: 20
+    ),
  ```
+### Component 
+
+ ```bash
+class GlobalSnackBar {
+  const GlobalSnackBar();
+
+  static warningSnackBar(
+    String message,
+  ) {
+    Get.snackbar('', '',
+        titleText: WarningSnackBar(
+          message: message,
+        ),
+        snackStyle: SnackStyle.FLOATING,
+        snackPosition: SnackPosition.BOTTOM,
+        barBlur: 0.0);
+  }
+
+  static errorSnackBar(
+    String message,
+  ) {
+    Get.snackbar('', '',
+        titleText: ErrorSnackBar(
+          message: message,
+        ),
+        snackStyle: SnackStyle.FLOATING,
+        snackPosition: SnackPosition.BOTTOM,
+        barBlur: 0.0);
+  }
+
+  static questionSnackBar(
+    String message,
+  ) {
+    Get.snackbar('', '',
+        titleText: QuestionSnackBar(
+          message: message,
+        ),
+        snackStyle: SnackStyle.FLOATING,
+        snackPosition: SnackPosition.BOTTOM,
+        barBlur: 0.0);
+  }
+
+  static successSnackBar(
+    String message,
+  ) {
+    Get.snackbar('', '',
+        titleText: SuccessSnackBar(
+          message: message,
+        ),
+        snackStyle: SnackStyle.FLOATING,
+        snackPosition: SnackPosition.BOTTOM,
+        barBlur: 0.0);
+  }
+}
+ ```
+
 
 ![Containment](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/63415fdc-0799-4ea5-b966-33688024fe2f)
 

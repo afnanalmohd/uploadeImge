@@ -660,18 +660,46 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 ## Navigation Rail
 ### Theme 
  ```bash
- Theme"
- Theme"
+ navigationRailTheme: NavigationRailThemeData(
+            backgroundColor: Colors.white,
+            elevation: 0,
+            minWidth: 12,
+            indicatorColor: Colors.blue,
+            useIndicator: true
+          )
  ```
 ### Component
  ```bash
- Component"
- Component"
+Row(
+              children: [
+                NavigationRail(
+                  destinations: <NavigationRailDestination>[
+                    NavigationRailDestination(
+                      icon: Icon(Icons.favorite_border),
+                      selectedIcon: Icon(Icons.favorite),
+                      label: Text('First'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.bookmark_border),
+                      selectedIcon: Icon(Icons.book),
+                      label: Text('Second'),
+                    ),
+                  ],
+                  selectedIndex: controller.index,
+                  onDestinationSelected: (int index) {
+                    controller.changeIndex(index);
+                  },
+                )
+              ],
+            )
  ```
 ### Controller
  ```bash
- Controller"
- Controller"
+  var index = 0;
+
+  changeIndex(int index) {
+    index = index;
+  }
  ```
 
 ## Tab Bar

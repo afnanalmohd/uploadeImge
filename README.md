@@ -264,11 +264,7 @@ toggleButtonsTheme: ToggleButtonsThemeData(
                        ),
  ```
 
-
-
-
-![Communication](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/d2b9faae-e020-44fe-9f17-79310342883d)
-# Communication
+![Communication](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/92297044/bf1c92f1-1b1b-41bc-bc9f-482bf284724e)
 
 ## Badge
 ### package
@@ -356,10 +352,6 @@ List<Model> list = [];
  Controller"
  ```
 
-![Containment](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/63415fdc-0799-4ea5-b966-33688024fe2f)
-
-# Containment
-
 ## Alert Dialog
 <img width="260" alt="Screen Shot 1445-04-22 at 12 34 45 PM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/f396e681-63d3-4370-bef6-91fcaaa5b391">
 
@@ -370,6 +362,9 @@ List<Model> list = [];
         shadowColor: Colors.white,
       )
  ```
+
+![Containment](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/92297044/3533a8fa-45ea-4e99-9a92-d284dca427e5)
+
 ### Component
  ```bash
 Dialog(

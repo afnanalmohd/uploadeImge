@@ -269,7 +269,7 @@ List<Model> list = [];
  ```bash
  progressIndicatorTheme: const ProgressIndicatorThemeData(
       linearMinHeight: 2.0,
-      color: Colors.color,
+      color: Colors.white,
     ),
  ```
 ### Component
@@ -277,7 +277,7 @@ List<Model> list = [];
        GetBuilder<controller>(
                 builder: (controller) {
                   return LinearProgressIndicator(
-                    color: Colors.color,
+                   color: Colors.white,
                     value: controller.progress,
                   );
                 },
@@ -312,7 +312,7 @@ List<Model> list = [];
  ```bash
  progressIndicatorTheme: const ProgressIndicatorThemeData(
       linearMinHeight: 2.0,
-      color: Colors.color,
+      color: Colors.white,
     ),
  ```
 ### Component
@@ -320,7 +320,7 @@ List<Model> list = [];
     GetBuilder<controller>(
                 builder: (controller) {
                   return CircularProgressIndicator(
-                    color: Colors.color,
+                   color: Colors.white,
                     value: controller.progress,
                   );
                 },

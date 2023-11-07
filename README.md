@@ -46,13 +46,19 @@
 ## Filled Button Tonal
 ### Theme 
  ```bash
- Theme"
- Theme"
+   filledButtonTheme: FilledButtonThemeData(
+        style: ButtonStyle(
+          backgroundColor: MaterialStatePropertyAll(Colors.black),
+foregroundColor:  MaterialStatePropertyAll(Colors.white),
+        )
+      )
  ```
 ### Component
  ```bash
- Component"
- Component"
+   FilledButton.tonal(
+                  onPressed: () {},
+                  child: const Text('press here'),
+                ),
  ```
 ## Outlined Button 
 ### Theme 

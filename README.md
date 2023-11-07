@@ -524,8 +524,6 @@ bottomSheetTheme: const BottomSheetThemeData(
 
 ![Navigation](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/7beb3d9d-d526-4674-b51c-a4c9e4c37fb3)
 
-# Navigation 
-
 ## App Bar
 ### Theme 
  ```bash
@@ -714,7 +712,6 @@ DefaultTabController(
 
 ![Selection](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/5bce0425-b463-4aa1-996c-83f1ae4fba53)
 
-# Selection
 ### Theme 
  ```bash
  Theme"

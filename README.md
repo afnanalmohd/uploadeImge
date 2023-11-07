@@ -35,13 +35,18 @@
 ## Filled Button
 ### Theme 
  ```bash
- Theme"
- Theme"
+  filledButtonTheme: FilledButtonThemeData(
+  style: ButtonStyle(
+backgroundColor: MaterialStatePropertyAll(Colors.black),
+foregroundColor:  MaterialStatePropertyAll(Colors.white),
+        )
  ```
 ### Component
  ```bash
- Component"
- Component"
+  FilledButton(
+                  onPressed: () {},
+                  child: const Text('press here'),
+                ),
  ```
 ## Filled Button Tonal
 ### Theme 

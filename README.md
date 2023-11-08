@@ -579,19 +579,39 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 ## Bottom App Bar 
 ### Theme 
  ```bash
- Theme"
- Theme"
+navigationBarTheme: NavigationBarThemeData(
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          shadowColor: Colors.grey.shade400,
+          indicatorColor: Colors.blue),
+          bottomAppBarTheme: BottomAppBarTheme(
+            color: Colors.white,
+elevation: 0.0,
+height: 12,
+shadowColor: Colors.black,
+shape: storage
+          )
  ```
 ### Component
  ```bash
- Component"
- Component"
+bottomNavigationBar: BottomAppBar(
+          child: Row(
+            children: [
+               IconButton(
+              tooltip: 'Search',
+              icon: const Icon(Icons.search),
+              onPressed: () {},
+            ),
+            IconButton(
+              tooltip: 'Favorite',
+              icon: const Icon(Icons.favorite),
+              onPressed: () {},
+            ),
+            ],
+          ),
+        ),
  ```
-### Controller
- ```bash
- Controller"
- Controller"
- ```
+
 
 ## Navigation Bar
 ### Theme 

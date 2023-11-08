@@ -291,9 +291,10 @@ List<Model> list = [];
  ```
 ### Controller
  ```bash
- double progress = 0.0;
+  double progress = 0.0;
+  int totalSteps = 100;
+
   Future<void> startProgress() async {
-    int totalSteps = 100;
     for (int currentStep = 0; currentStep < totalSteps; currentStep++) {
       await Future.delayed(const Duration(milliseconds: 100));
       progress = (currentStep / totalSteps).toDouble();
@@ -335,9 +336,10 @@ List<Model> list = [];
  ```
 ### Controller
  ```bash
- double progress = 0.0;
+  double progress = 0.0;
+  int totalSteps = 100;
+
   Future<void> startProgress() async {
-    int totalSteps = 100;
     for (int currentStep = 0; currentStep < totalSteps; currentStep++) {
       await Future.delayed(const Duration(milliseconds: 100));
       progress = (currentStep / totalSteps).toDouble();

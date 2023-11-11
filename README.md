@@ -1,11 +1,54 @@
 
-# Material Components widgets 
-![Action](https://github.com/Khiriah/design_system_flutter/assets/92297044/f36ac332-645d-42b9-a5d3-b48aecf30b27)
+<img align="left" width="70" height="full" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/f9c41919-764e-4727-913b-e7f2f7fccdec" alt="flutterlogo" >
 
+
+# Material Components Widgets 
+<br>
+
+**Material Components Widgets** was completed by <a href="https://thegarage.sa">TheGarage</a>
+ mobile application development team. It is built using <a href="https://docs.flutter.dev/get-started/install"> Flutter</a>.
+ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for state management.
+ Additionally, The primary objective of writing widget 
+ content is to ensure it results in clean code that is easy to read, maintain, understand, and modify by following a structured and consistent format.
+ 
+
+<br>
+
+##  🗺️ Contents 
+
+**Material Components** are a collection of UI widgets and design guidelines, divided into **six components**:
+</b></b>
+
+
+
+ -  [Actions](#action) : Interactive elements which trigger actions when clicked .
+ -  [Communication](#communication) : Used to convey information to the user.
+ -  [Containment](#containment) : Components for grouping  in defined area.
+ -  [Navigation](#navigation) : User movement within the application.
+ -  [Selection](#selection) : That allow users to make decisions .
+ -  [Text Inputs](#text_inputs) :Elements for entering text .
+  
+
+   
+
+
+
+
+
+## 
+![action](https://github.com/afnanalmohd/task_flutterr/assets/53023171/6bc3c5d9-38db-4685-95c1-938af410e5c1) <a id="action"></a>
 
 # Common Buttons
-## Elevated Button
-### Theme 
+
+
+<img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/ccdd8e53-2212-4eb9-9656-25bf302fdbbb"
+ alt="Elevated Button" >
+<br>
+
+
+</br>
+
+#### Theme 
  ```bash
  elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -32,8 +75,18 @@
           )
  ```
 
-## Filled Button
-### Theme 
+
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/a631886b-43c3-4b62-b497-6ce62ec68740"
+ alt="Filled Button" >
+
+<br>
+
+
+</br>
+
+ 
+#### Theme 
  ```bash
   filledButtonTheme: FilledButtonThemeData(
   style: ButtonStyle(
@@ -48,8 +101,18 @@ foregroundColor:  MaterialStatePropertyAll(Colors.white),
                   child: const Text('press here'),
                 ),
  ```
-## Filled Button Tonal
-### Theme 
+
+
+## 
+<img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/6e1c10f7-b269-440b-8e41-e0d5e561e459"
+ alt="Filled Button" >
+<br>
+
+
+</br>
+
+#### Theme 
+
  ```bash
    filledButtonTheme: FilledButtonThemeData(
         style: ButtonStyle(
@@ -65,8 +128,20 @@ foregroundColor:  MaterialStatePropertyAll(Colors.white),
                   child: const Text('press here'),
                 ),
  ```
-## Outlined Button 
-### Theme 
+
+
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/60e3e962-a566-4929-9fea-451ad72290a5"
+ alt="Outlined Button " >
+
+<br>
+
+
+</br>
+
+ 
+#### Theme 
+
  ```bash
  outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
@@ -94,8 +169,20 @@ OutlinedButton(
               ),
                    
  ```
-## Text Button 
-### Theme 
+
+
+
+## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/9a63ed74-55fe-48fd-8c52-345b0c804c82"
+ alt="Text Button " >
+
+<br>
+
+
+</br>
+
+ 
+#### Theme 
  ```bash
    textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
@@ -113,9 +200,20 @@ TextButton(
                   ),
                 ),
  ```
+##
 
-## Floating Action Button
-### Theme 
+
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/ae5e2d25-e61f-4f3f-92f4-f9a0a64d31ed"
+ alt="Text Button " >
+
+<br>
+
+
+</br>
+
+ 
+#### Theme 
+
  ```bash
  floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: Colors.blue,
@@ -131,8 +229,21 @@ TextButton(
             ),
  ```
 
-## Extended Floating Action Button 
-### Theme 
+
+##
+
+
+ <img align="left" width="450" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/f903e828-d8de-4335-8a87-d20c9a9eed18"
+ alt="Text Button " >
+
+<br>
+
+
+</br>
+
+ 
+#### Theme 
+
  ```bash
  floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: Colors.blue,
@@ -150,8 +261,21 @@ TextButton(
             ),
  ```
 
-## Icon Button
-### Theme 
+##
+
+
+
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/ef42c587-05bc-4b3b-bbdb-149a70af578f"
+ alt="Text Button " >
+
+<br>
+
+
+</br>
+
+ 
+#### Theme 
+
  ```bash
               iconTheme: const IconThemeData(color: Colors.red),
               primaryIconTheme: const IconThemeData(color: Colors.blue),
@@ -169,9 +293,21 @@ TextButton(
               icon: const Icon(Icons.save),
             ),
  ```
+##
 
-## Segmented Button
-### Theme 
+
+
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/4b346c1d-ec9d-423c-9004-48c533d94dea"
+ alt="Text Button " >
+
+<br>
+
+
+</br>
+
+ 
+#### Theme 
+
  ```bash
  segmentedButtonTheme: SegmentedButtonThemeData(
      style: ButtonStyle(
@@ -211,13 +347,24 @@ TextButton(
 
                       );
                     })
-                  
-                  
-                  
-                  
+                               
  ```
-## Toggle Button
-### Theme 
+
+##
+
+
+
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/05e5b2a6-e6f2-450e-8f2e-f1587f7fd3d1 "
+ alt="Text Button " >
+
+<br>
+
+
+</br>
+
+ 
+#### Theme 
+
  ```bash
 toggleButtonsTheme: ToggleButtonsThemeData(
         color: blackColor,
@@ -264,9 +411,24 @@ toggleButtonsTheme: ToggleButtonsThemeData(
                        ),
  ```
 
-![Communication](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/92297044/bf1c92f1-1b1b-41bc-bc9f-482bf284724e)
 
-## Badge
+
+
+
+![communication](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/30a374f1-9a50-48e1-add9-4fdadbcb511f) <a id="communication"></a>
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/ef3881bf-abca-4576-9a1b-80303174bbaa"
+ alt="Badge" >
+
+<br>
+
+
+
+</br>
+
+ 
+#### Theme 
+
 ### package
  ```bash
  badges: ^3.1.2
@@ -318,8 +480,21 @@ List<Model> list = [];
   }
  ```
 
-## Linear Progress Inictor
-### Theme 
+ ## 
+ <img align="left" width="450" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/8fcbc752-d4d4-47ff-9f6a-8cc62ee45cae"
+ alt="Badge" >
+
+<br>
+
+
+
+
+</br>
+
+ 
+#### Theme 
+
+ 
  ```bash
  progressIndicatorTheme: const ProgressIndicatorThemeData(
       linearMinHeight: 2.0,
@@ -360,10 +535,21 @@ List<Model> list = [];
   
  ```
 
+ ## 
+ <img align="left" width="450" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/31b31b7d-d988-497a-86ad-312db778f579"
+ alt="Badge" >
+
+<br>
 
 
-## Circular Progress Inictor
-### Theme 
+
+
+</br>
+
+ 
+#### Theme 
+
+
  ```bash
  progressIndicatorTheme: const ProgressIndicatorThemeData(
       linearMinHeight: 2.0,
@@ -403,7 +589,19 @@ List<Model> list = [];
    
  ```
 
-## Snack Bar
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/d215231a-94c8-41cd-add1-0ac90715575d"
+ alt="Badge" >
+
+<br>
+
+
+
+
+</br>
+
+ 
+#### Theme 
 
 We recommend using the 'SnackBarWidget' if you have only one design.
 
@@ -430,7 +628,20 @@ We recommend using the 'SnackBarWidget' if you have only one design.
 
 
 
-## Snack Bar
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/253d99e1-f456-46e5-8a35-df96042deb21"
+ alt="Badge" >
+
+<br>
+
+
+
+
+
+</br>
+
+ 
+#### Theme 
 
 We recommend using the "GlobalSnackBar" class throughout the entire project, especially if there are various designs for SnackBars 
 such as warning, error, and success messages.
@@ -500,10 +711,24 @@ class GlobalSnackBar {
  ```
 
 
-## Alert Dialog
-<img width="260" alt="Screen Shot 1445-04-22 at 12 34 45 PM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/f396e681-63d3-4370-bef6-91fcaaa5b391">
+![Containment)](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/d9f00fe3-d80d-4d45-ab71-9a4f2ee0f290) <a id="containment"></a>
 
-### Theme 
+
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/814fecdf-2150-44ef-90e2-40d7c0bcaaf0"
+ alt="Filled Button" >
+
+<br>
+
+
+
+</br>
+
+ 
+#### Theme
+
+
+
  ```bash
  dialogTheme: const DialogTheme(
         backgroundColor: greyCoffeeColor,
@@ -511,7 +736,6 @@ class GlobalSnackBar {
       )
  ```
 
-![Containment](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/92297044/3533a8fa-45ea-4e99-9a92-d284dca427e5)
 
 ### Component
  ```bash
@@ -540,11 +764,22 @@ Dialog(
 );
  ```
 
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/b8703003-1015-449b-aad2-61fdda20fc4f"
+ alt="Filled Button" >
 
-## Bottom Sheet 
-![material-3-bottom-sheet](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/aaa67772-6af6-4437-98a1-ff35025f0a31)
+<br>
 
-### Theme 
+
+
+
+</br>
+
+ 
+#### Theme
+
+
+
  ```bash
 bottomSheetTheme: const BottomSheetThemeData(
         backgroundColor: whiteColor,
@@ -565,10 +800,22 @@ bottomSheetTheme: const BottomSheetThemeData(
  ```
 
 
-## Card
-<img width="297" alt="Screen Shot 1445-04-22 at 9 59 35 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/5aebd906-92bb-412a-854a-dbbce0a86942">
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/40fe9db5-3df8-438f-ba27-d3ca1d5c37b3"
+ alt="Filled Button" >
 
-### Theme 
+<br>
+
+
+
+
+</br>
+
+ 
+#### Theme
+
+
+
  ```bash
   cardTheme: const CardTheme(
       elevation: 0.0,
@@ -595,10 +842,22 @@ bottomSheetTheme: const BottomSheetThemeData(
       );
  ```
 
-## Divider
-<img width="297" alt="Screen Shot 1445-04-22 at 10 54 16 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/8d7c0fd4-4247-440b-b58a-1f47e7b1609f">
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/7112bfe8-c405-4e8d-812e-45dc7e2086bf"
+ alt="Filled Button" >
 
-### Theme 
+<br>
+
+
+
+
+</br>
+
+ 
+#### Theme
+
+
+
  ```bash
     dividerColor: greyCoffeeColor,
  ```
@@ -608,10 +867,22 @@ bottomSheetTheme: const BottomSheetThemeData(
   thickness: 2,
   ),
  ```
-## List Tile
-<img width="437" alt="Screen Shot 1445-04-22 at 11 40 10 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/e5bbfa8a-9fc7-49b8-ab3c-cb652680ee01">
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/5ec7172e-f0e9-4e2a-a58b-869748d156fc"
+ alt="Filled Button" >
 
-### Theme 
+<br>
+
+
+
+
+</br>
+
+ 
+#### Theme
+
+
+
  ```bash
   listTileTheme: const ListTileThemeData(
         textColor: Colors.black,        
@@ -632,9 +903,19 @@ bottomSheetTheme: const BottomSheetThemeData(
  Controller"
  ```
 
-## Grid view 
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/7375bf8c-c917-4612-aadd-cf8c9c7b8048"
+ alt="Filled Button" >
 
-<img width="314" alt="Screen Shot 1445-04-22 at 11 25 30 AM" src="https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/91871608/e0ed3a15-cd0a-4f85-9e86-2ff8c58a78fc">
+<br>
+
+
+
+
+
+</br>
+
+ 
 
 
 ### Component
@@ -658,7 +939,19 @@ bottomSheetTheme: const BottomSheetThemeData(
 
  ```
 
-## List View
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/34e258f0-2bdc-451b-a8fe-a345d2bf4293"
+ alt="Filled Button" >
+
+<br>
+
+
+
+
+
+</br>
+
+ 
 
 ### Component
  ```bash
@@ -669,10 +962,29 @@ bottomSheetTheme: const BottomSheetThemeData(
            },
  ```
 
+<br>
 
-![Navigation](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/7beb3d9d-d526-4674-b51c-a4c9e4c37fb3)
 
-## App Bar
+
+
+</br>
+
+![navigation](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/2209d949-722d-42f6-bd0f-11141a3f55a7) <a id="navigation"></a>
+
+## 
+ <img align="left" width="280" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/877a453c-0264-44e3-a64d-792f4797c1c4"
+ alt="Badge" >
+
+<br>
+
+
+
+
+
+</br>
+
+ 
+
 ### Theme 
  ```bash
 appBarTheme: const AppBarTheme(
@@ -724,8 +1036,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 }
  ```
 
-## Bottom App Bar 
-### Theme 
+
  ```bash
 navigationBarTheme: NavigationBarThemeData(
           backgroundColor: Colors.white,
@@ -761,7 +1072,21 @@ bottomNavigationBar: BottomAppBar(
  ```
 
 
-## Navigation Bar
+## 
+ <img align="left" width="280" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/9b80d07c-69d6-494e-9c2c-19ff711bf4bd"
+ alt="Badge" >
+
+<br>
+
+
+
+
+
+
+</br>
+
+ 
+
 ### Theme 
  ```bash
       navigationBarTheme: NavigationBarThemeData(
@@ -808,7 +1133,21 @@ bottomNavigationBar: BottomAppBar(
  ```
 
 
-## Navigation Drawer
+## 
+ <img align="left" width="280" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/699887e2-df94-4d04-9d08-186168e2008d"
+ alt="Badge" >
+
+<br>
+
+
+
+
+
+
+</br>
+
+ 
+
 ### Theme 
  ```bash
 navigationDrawerTheme: NavigationDrawerThemeData(
@@ -841,7 +1180,22 @@ navigationDrawerTheme: NavigationDrawerThemeData(
  ),
  ```
 
-## Navigation Rail
+## 
+ <img align="left" width="280" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/2bbeb786-cb3e-4bbb-b96c-5c88f73f36f0"
+ alt="Badge" >
+
+<br>
+
+
+
+
+
+
+
+</br>
+
+ 
+
 ### Theme 
  ```bash
  navigationRailTheme: NavigationRailThemeData(
@@ -886,7 +1240,21 @@ Row(
   }
  ```
 
-## Tab Bar
+## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/eb77991f-edd3-4b25-8148-25350023e349"
+ alt="tabBarTheme" >
+
+<br>
+
+
+
+
+
+
+</br>
+
+ 
+
 ### Theme 
  ```bash
 tabBarTheme: TabBarTheme(
@@ -920,28 +1288,23 @@ DefaultTabController(
       ),
 ),
  ```
+![selection](https://github.com/afnanalmohd/task_flutterr/assets/53023171/29fbf8fe-74e6-4768-94f2-81e87329636b) <a id="selection"></a>
 
 
-![Selection](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/5bce0425-b463-4aa1-996c-83f1ae4fba53)
 
-### Theme 
- ```bash
- Theme"
- Theme"
- ```
-### Component
- ```bash
- Component"
- Component"
- ```
-### Controller
- ```bash
- Controller"
- Controller"
- ```
 
-## Check Box
-### Theme 
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/7f5ea430-c03b-4373-8527-75e6ea9ece62  "
+ alt="Filled Button" >
+
+<br>
+
+
+
+</br>
+
+ 
+#### Theme
  ```bash
     checkboxTheme: CheckboxThemeData(
       shape: RoundedRectangleBorder(
@@ -971,8 +1334,19 @@ DefaultTabController(
   }
  ```
 
-## Chip 
-### Theme 
+
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/c5a3f789-dd7c-480b-aa03-52af879e5e59"
+ alt="Filled Button" >
+
+<br>
+
+
+
+</br>
+
+ 
+#### Theme
  ```bash
   chipTheme: ChipThemeData(
       secondarySelectedColor: whiteColor,
@@ -1001,7 +1375,20 @@ ChoiceChip(
 ),
  ```
 
-## Date Picker
+
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/f248dbde-dab8-4dca-a9a5-5a6f473dcb95"
+ alt="Filled Button" >
+
+<br>
+
+
+
+
+</br>
+
+ 
+
 ### Pakage 
  ```bash
   syncfusion_flutter_datepicker: ^22.1.37
@@ -1084,8 +1471,24 @@ class CalendarWidget extends StatelessWidget {
     return false;
   }
  ```
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/f8dfac39-9c14-40d1-a335-d210343acca2"
+ alt="Filled Button" >
 
-## Dropdown Button
+<br>
+
+
+
+
+
+</br>
+
+ 
+
+
+
+
+
 ### Package 
  ```bash
   dropdown_button2: ^2.3.9
@@ -1164,8 +1567,20 @@ DropdownButton2(
   }
  ```
 
-## Radio
-### Theme 
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/569613e0-20ff-42cc-a6ca-a725c0c75cf5"
+ alt="Filled Button" >
+
+<br>
+
+
+
+
+</br>
+
+ 
+#### Theme
+
  ```bash
  Theme"
  Theme"
@@ -1181,8 +1596,23 @@ DropdownButton2(
  Controller"
  ```
 
-## Slider
-### Theme 
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/82012169-eee6-411d-8444-a4710cf011d8"
+ alt="Filled Button" >
+
+<br>
+
+
+
+
+
+</br>
+
+ 
+#### Theme
+
+
+
  ```bash
  Theme"
  Theme"
@@ -1198,8 +1628,23 @@ DropdownButton2(
  Controller"
  ```
 
-## Switch
-### Theme 
+
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/169201a2-1258-4750-84ee-939305028ee0"
+ alt="Filled Button" >
+
+<br>
+
+
+
+
+
+</br>
+
+ 
+#### Theme
+
+
  ```bash
  Theme"
  Theme"
@@ -1215,8 +1660,22 @@ DropdownButton2(
  Controller"
  ```
 
-## Time Picker
-### Theme 
+ ## 
+ <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/bcacf745-b1da-4d25-9a1b-6636afb33b16"
+ alt="Filled Button" >
+
+<br>
+
+
+
+
+
+</br>
+
+ 
+#### Theme
+
+
  ```bash
  Theme"
  Theme"
@@ -1231,6 +1690,22 @@ DropdownButton2(
  Controller"
  Controller"
  ```
+
+
+![text_inputs](https://github.com/afnanalmohd/task_flutterr/assets/53023171/e2c451d8-df5e-4d9f-b40f-ea74e99e3593) <a id="text_inputs"></a>
 
 # Text Inputs
+
+
+## 🦸‍♀️  SuperHero  
+
+ -  Afnan Almohammdi. 
+ -  Ahlam Albalawi.
+ -  Hanan Asiri.
+ -  Joud Almahdi.
+ -  Khairiah Alayyafi،
+ -  Razan Ajohani.
+ -  Sirin Algadi.
+  
+
 

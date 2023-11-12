@@ -103,3 +103,4 @@ android/\.classpath
 **/.flutter-plugins-dependencies
 
 .env
+.DS_Store

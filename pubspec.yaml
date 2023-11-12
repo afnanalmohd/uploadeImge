@@ -1,0 +1,71 @@
+name: flutter_template
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0-63.1.beta <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  get: ^4.6.5
+  http: ^0.13.6
+  get_storage: ^2.1.1
+  http_interceptor: ^1.0.2
+  flutter_dotenv: ^5.1.0
+  jwt_decoder: ^2.0.1
+  url_launcher: ^6.1.12
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter_native_splash:
+  background_image: "assets/images/example.png"
+
+  android_12:
+    color: "#5616AF"
+
+flutter_launcher_icons:
+  image_path_android: "assets/images/example.png"
+  image_path_ios: "assets/images/example.png"
+  android: true
+  ios: true
+  adaptive_icon_background: "assets/images/example.png"
+  adaptive_icon_foreground: "assets/images/example.png"
+
+
+# after adding splash image or icon launcher do this steps in terminal
+
+#  flutter clean
+#  flutter pub get
+#  flutter pub run flutter_native_splash:create
+
+# icon
+#  flutter clean
+#  flutter pub get
+#  flutter pub run flutter_launcher_icons
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - .env
+    - assets/images/
+
+  fonts:
+    - family: GE-SS-Two
+      fonts:
+        - asset: assets/fonts/GE-SS-Two-Bold.otf
+          weight: 900
+        - asset: assets/fonts/GE_SS_Two_Light.otf
+          weight: 300
+        - asset: assets/fonts/GE_SS_Two_Medium.otf
+          weight: 500

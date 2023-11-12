@@ -1582,18 +1582,52 @@ DropdownButton2(
 #### Theme
 
  ```bash
- Theme"
- Theme"
+    radioTheme: RadioThemeData(
+      overlayColor: MaterialStateProperty.all(whiteColor),
+      fillColor: MaterialStateProperty.all(Colors.transparent),
+    ),
  ```
 ### Component
  ```bash
- Component"
- Component"
+          Row(
+                          children: [
+                            SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: Radio(
+                                value: 1,
+                                groupValue: controller.radioButtonId,
+                                onChanged: (value) {
+                                  controller.setSelectedFoodId(value = 1);
+                                  controller.setSelectedFood('Option1');
+                                },
+                                activeColor: Colors.red,
+                              ),
+                            ),
+                            const SizedBox(width: 10,),
+                            Text(
+                              'Option1',
+                              style: textTheme.headlineMedium
+                                  ?.copyWith(fontSize: 14),
+                            ),
+
+                          ],
+                        ),
  ```
 ### Controller
  ```bash
- Controller"
- Controller"
+  int radioButtonId = 0;
+  String selectedRadioButton = '';
+
+  void updateSelected(String value) {
+    selectedRadioButton = value;
+    update();
+  }
+
+  void setSelectedFoodId(int radioButtonIdValue) {
+    radioButtonId = radioButtonIdValue;
+    update();
+  }
  ```
 
  ## 

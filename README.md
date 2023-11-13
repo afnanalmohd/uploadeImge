@@ -1680,18 +1680,29 @@ DropdownButton2(
 
 
  ```bash
- Theme"
- Theme"
+ switchTheme: SwitchThemeData(
+      thumbColor: MaterialStateProperty.all(whiteColor),
+      trackColor: MaterialStateProperty.all(blackColor),
+      trackOutlineColor: MaterialStateProperty.all(primaryPurpleColor),
+    ),
  ```
 ### Component
  ```bash
- Component"
- Component"
+   Switch(
+          value: controller.isOpen,
+          onChanged: (value) {
+          controller.changeSwitch();
+    },
+  ),
  ```
 ### Controller
  ```bash
- Controller"
- Controller"
+  bool isOpen = true;
+
+  void changeSwitch() {
+    isOpen = !isOpen;
+    update();
+  }
  ```
 
  ## 

@@ -1705,25 +1705,75 @@ DropdownButton2(
 
 
 </br>
+#Others
 
- 
-#### Theme
-
-
- ```bash
- Theme"
- Theme"
- ```
-### Component
- ```bash
- Component"
- Component"
- ```
 ### Controller
  ```bash
- Controller"
- Controller"
+class SkeletonController extends GetxController with GetSingleTickerProviderStateMixin {
+  
+  late AnimationController _animationController;
+  late Animation gradientPosition;
+
+  @override
+  onInit(){
+    super.onInit();
+    _animationSetup();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  void _animationSetup() {
+    _animationController = AnimationController(duration: const Duration(milliseconds: 1500), vsync: this);
+    gradientPosition = Tween<double>(
+      begin: -3,
+      end: 10,
+    ).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.linear),
+    )..addListener(update);
+    _animationController.repeat();
+  }
+  
+}
  ```
+
+### Component
+ ```bash
+class Skeleton extends StatelessWidget {
+  final double height;
+  final double width;
+  final BorderRadiusGeometry? borderRadius;
+
+  const Skeleton({
+    Key? key,
+    this.height = 20,
+    this.width = 200,
+    this.borderRadius,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<SkeletonController>(builder: (skeletonController) {
+      return Container(
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+          borderRadius: borderRadius,
+          gradient: LinearGradient(
+            begin: Alignment(skeletonController.gradientPosition.value, 0),
+            end: const Alignment(-1, 0),
+            colors: const [greyPlatinumColor, greyMysticColor, greyLightColor],
+          ),
+        ),
+      );
+    });
+  }
+}
+ ```
+
 
 
 ![text_inputs](https://github.com/afnanalmohd/task_flutterr/assets/53023171/e2c451d8-df5e-4d9f-b40f-ea74e99e3593) <a id="text_inputs"></a>

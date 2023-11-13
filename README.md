@@ -1833,6 +1833,144 @@ class DelaySearch {
   List<Model> searchList = [];
  ```
 
+##TextField
+#### Theme
+ ```bash
+        inputDecorationTheme: const InputDecorationTheme(
+              contentPadding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 10),
+              fillColor: Color.fromRGBO(55, 64, 76, 0.05),
+              prefixIconColor: Color.fromRGBO(55, 64, 76, 0.05),
+              suffixIconColor: Color.fromRGBO(55, 64, 76, 0.05),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color.fromRGBO(1, 1, 1, 0.1),
+                ),
+              ),
+              border: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  width: 2,
+                ),
+              ),
+              enabledBorder: UnderlineInputBorder(
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(5),
+                    topLeft: Radius.circular(5),
+                    bottomLeft: Radius.circular(0),
+                    bottomRight: Radius.circular(0)),
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color.fromRGBO(1, 1, 1, 0.1),
+                ),
+              ),
+              filled: true,
+            ),
+ ```
+### Component
+
+ ```bash
+class TextFieldWidget extends StatelessWidget {
+  final TextEditingController controller;
+  final FormFieldValidator? validator;
+  final Widget? prefixIcon, suffixIcon;
+  final String? text , hintText;
+  final bool? enabled;
+  final TextInputType? keyboardType;
+  final ValueChanged<String>? onChanged;
+  final Iterable<String>? autofillHints;
+  final List<TextInputFormatter>? inputFormatters;
+  final int? maxLine , maxLength;
+
+  const TextFieldWidget({
+    required this.controller,
+    this.validator,
+    this.onChanged,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.enabled,
+    this.hintText,
+    this.text,
+    this.keyboardType,
+    Key? key,
+    this.autofillHints,
+    this.inputFormatters,
+    this.maxLine,
+    this.maxLength,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final textTheme = Theme.of(context).textTheme;
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(
+            right: 16,
+          ),
+          child: Align(
+            alignment: Alignment.topRight,
+            child: text == null
+                ? null
+                : Text(
+                    '$text',
+                    style: textTheme.bodyMedium,
+                  ),
+          ),
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        TextFormField(
+          inputFormatters: inputFormatters,
+          autofillHints: autofillHints,
+          enabled: enabled,
+          style: textTheme.bodySmall,
+          controller: controller,
+          onChanged: onChanged,
+          maxLines: maxLine,
+          keyboardType: keyboardType,
+          cursorColor: Colors.black,
+          validator: validator,
+          maxLength: maxLength,
+          decoration: InputDecoration(
+            hintText: hintText,
+            hintStyle: textTheme.bodySmall,
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+ ```
+
+
+ ```bash
+TextFieldWidget(
+            suffixIcon:const Icon(Icons.remove_red_eye_outlined),
+            prefixIcon:const Icon(Icons.person),
+            hintText: 'Hint Text',
+            controller: textEditingController,
+            maxLength: 20,
+            validator: (value) {
+// validation for test for GetUtils
+              if ((!GetUtils.isLengthBetween(value, 2, 10))) {
+                return 'Letters must be more than two letters and less than 10';
+              }
+              return null;
+            },
+          ),
+        ),
+ ```
+### Controller
+ ```bash
+ Controller"
+ Controller"
+ ```
+
 
 
 ![text_inputs](https://github.com/afnanalmohd/task_flutterr/assets/53023171/e2c451d8-df5e-4d9f-b40f-ea74e99e3593) <a id="text_inputs"></a>

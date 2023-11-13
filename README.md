@@ -1691,16 +1691,16 @@ DropdownButton2(
    Switch(
           value: controller.isOpen,
           onChanged: (value) {
-          controller.changeSwitch();
+          controller.changeSwitch(value);
     },
   ),
  ```
 ### Controller
  ```bash
-  bool isOpen = true;
+  bool isOpen = false;
 
-  void changeSwitch() {
-    isOpen = !isOpen;
+  void changeSwitch(bool value) {
+    isOpen = value;
     update();
   }
  ```

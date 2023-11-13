@@ -1672,23 +1672,45 @@ DropdownButton2(
 
 </br>
 
- 
-#### Theme
+ # search
+ ### Delay Search
+  ```bash
+class DelaySearch {
+  final int milliseconds;
+  VoidCallback? action;
+  Timer _timer;
 
+  DelaySearch({required this.milliseconds})
+      : _timer = Timer(Duration.zero, () {});
 
- ```bash
- Theme"
- Theme"
+  run(VoidCallback action) {
+    _timer.cancel();
+    _timer = Timer(Duration(milliseconds: milliseconds), action);
+  }
+}
  ```
+ 
 ### Component
  ```bash
- Component"
- Component"
+ final delaySearch = DelaySearch(milliseconds: 500);
+
+ TextFieldWidget(
+                          onChanged: (value) {
+                            delaySearch.run(() {
+                              searchController
+                                  .search(value);
+                            });
+                          },
+                          hintText: 'Search Here',
+                          suffixIcon: const Icon(Icons.search),
+                          controller:
+                              searchController.searchEditingController),
+                    ),
  ```
 ### Controller
  ```bash
- Controller"
- Controller"
+  TextEditingController searchEditingController = TextEditingController();
+  List<Model> searchList = [];
  ```
 
 

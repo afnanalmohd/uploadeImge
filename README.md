@@ -1716,124 +1716,30 @@ DropdownButton2(
 
 
 </br>
-#Others
 
-### Controller
+### Theme
  ```bash
-class SkeletonController extends GetxController with GetSingleTickerProviderStateMixin {
-  
-  late AnimationController _animationController;
-  late Animation gradientPosition;
-
-  @override
-  onInit(){
-    super.onInit();
-    _animationSetup();
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  void _animationSetup() {
-    _animationController = AnimationController(duration: const Duration(milliseconds: 1500), vsync: this);
-    gradientPosition = Tween<double>(
-      begin: -3,
-      end: 10,
-    ).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.linear),
-    )..addListener(update);
-    _animationController.repeat();
-  }
-  
-}
+ Theme"
+ Theme"
  ```
 
 ### Component
  ```bash
-class Skeleton extends StatelessWidget {
-  final double height;
-  final double width;
-  final BorderRadiusGeometry? borderRadius;
-
-  const Skeleton({
-    Key? key,
-    this.height = 20,
-    this.width = 200,
-    this.borderRadius,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GetBuilder<SkeletonController>(builder: (skeletonController) {
-      return Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          borderRadius: borderRadius,
-          gradient: LinearGradient(
-            begin: Alignment(skeletonController.gradientPosition.value, 0),
-            end: const Alignment(-1, 0),
-            colors: const [greyPlatinumColor, greyMysticColor, greyLightColor],
-          ),
-        ),
-      );
-    });
-  }
-}
+ Component"
+ Component"
  ```
 
- ## Search
-  Often we use a search bar in our app to perform autocomplete-style searches via network calls.
-  In such a case, it is not feasible to perform a network request with every character that the user
-  types/changes; that would result in wasted network calls. it is better to search once the user 
-  pauses or stops typing. This can be achieved using a Debouncer, which uses a timer to delay the search
-  request until it stops receiving text changes for half a second, or any duration that you set.
-  
- You have to creat this class :
- ### Delay Search
-  ```bash
-class DelaySearch {
-  final int milliseconds;
-  VoidCallback? action;
-  Timer _timer;
-
-  DelaySearch({required this.milliseconds})
-      : _timer = Timer(Duration.zero, () {});
-
-  run(VoidCallback action) {
-    _timer.cancel();
-    _timer = Timer(Duration(milliseconds: milliseconds), action);
-  }
-}
- ```
- 
-### Component
- ```bash
- final delaySearch = DelaySearch(milliseconds: 500);
-
- TextFieldWidget(
-                          onChanged: (value) {
-                            delaySearch.run(() {
-                              searchController
-                                  .search(value);
-                            });
-                          },
-                          hintText: 'Search Here',
-                          suffixIcon: const Icon(Icons.search),
-                          controller:
-                              searchController.searchEditingController),
-                    ),
- ```
 ### Controller
  ```bash
-  TextEditingController searchEditingController = TextEditingController();
-  List<Model> searchList = [];
+ Controller"
+ Controller"
  ```
 
-##TextField
+![text_inputs](https://github.com/afnanalmohd/task_flutterr/assets/53023171/e2c451d8-df5e-4d9f-b40f-ea74e99e3593) <a id="text_inputs"></a>
+
+# Text Inputs
+
+## TextField
 #### Theme
  ```bash
         inputDecorationTheme: const InputDecorationTheme(
@@ -1947,7 +1853,6 @@ class TextFieldWidget extends StatelessWidget {
 
  ```
 
-
  ```bash
 TextFieldWidget(
             suffixIcon:const Icon(Icons.remove_red_eye_outlined),
@@ -1965,18 +1870,125 @@ TextFieldWidget(
           ),
         ),
  ```
+
+ ## Search
+  Often we use a search bar in our app to perform autocomplete-style searches via network calls.
+  In such a case, it is not feasible to perform a network request with every character that the user
+  types/changes; that would result in wasted network calls. it is better to search once the user 
+  pauses or stops typing. This can be achieved using a Debouncer, which uses a timer to delay the search
+  request until it stops receiving text changes for half a second, or any duration that you set.
+  
+ You have to creat this class :
+ ### Delay Search
+  ```bash
+class DelaySearch {
+  final int milliseconds;
+  VoidCallback? action;
+  Timer _timer;
+
+  DelaySearch({required this.milliseconds})
+      : _timer = Timer(Duration.zero, () {});
+
+  run(VoidCallback action) {
+    _timer.cancel();
+    _timer = Timer(Duration(milliseconds: milliseconds), action);
+  }
+}
+ ```
+ 
+### Component
+ ```bash
+ final delaySearch = DelaySearch(milliseconds: 500);
+
+ TextFieldWidget(
+                          onChanged: (value) {
+                            delaySearch.run(() {
+                              searchController
+                                  .search(value);
+                            });
+                          },
+                          hintText: 'Search Here',
+                          suffixIcon: const Icon(Icons.search),
+                          controller:
+                              searchController.searchEditingController),
+                    ),
+ ```
 ### Controller
  ```bash
- Controller"
- Controller"
+  TextEditingController searchEditingController = TextEditingController();
+  List<Model> searchList = [];
  ```
 
+# Others
 
+## Skeleton
 
-![text_inputs](https://github.com/afnanalmohd/task_flutterr/assets/53023171/e2c451d8-df5e-4d9f-b40f-ea74e99e3593) <a id="text_inputs"></a>
+### Controller
+ ```bash
+class SkeletonController extends GetxController with GetSingleTickerProviderStateMixin {
+  
+  late AnimationController _animationController;
+  late Animation gradientPosition;
 
-# Text Inputs
+  @override
+  onInit(){
+    super.onInit();
+    _animationSetup();
+  }
 
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  void _animationSetup() {
+    _animationController = AnimationController(duration: const Duration(milliseconds: 1500), vsync: this);
+    gradientPosition = Tween<double>(
+      begin: -3,
+      end: 10,
+    ).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.linear),
+    )..addListener(update);
+    _animationController.repeat();
+  }
+  
+}
+ ```
+
+### Component
+ ```bash
+class Skeleton extends StatelessWidget {
+  final double height;
+  final double width;
+  final BorderRadiusGeometry? borderRadius;
+
+  const Skeleton({
+    Key? key,
+    this.height = 20,
+    this.width = 200,
+    this.borderRadius,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<SkeletonController>(builder: (skeletonController) {
+      return Container(
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+          borderRadius: borderRadius,
+          gradient: LinearGradient(
+            begin: Alignment(skeletonController.gradientPosition.value, 0),
+            end: const Alignment(-1, 0),
+            colors: const [greyPlatinumColor, greyMysticColor, greyLightColor],
+          ),
+        ),
+      );
+    });
+  }
+}
+ ```
 
 ## 🦸‍♀️  SuperHero  
 

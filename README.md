@@ -1774,14 +1774,14 @@ class Skeleton extends StatelessWidget {
 }
  ```
 
- # search
-  #### Often we use a search bar in our app to perform autocomplete-style searches via network calls.
- #### In such a case, it is not feasible to perform a network request with every character that the user
- #### types/changes; that would result in wasted network calls. it is better to search once the user 
- #### pauses or stops typing. This can be achieved using a Debouncer, which uses a timer to delay the search
- #### request until it stops receiving text changes for half a second, or any duration that you set.
+ ## Search
+  Often we use a search bar in our app to perform autocomplete-style searches via network calls.
+  In such a case, it is not feasible to perform a network request with every character that the user
+  types/changes; that would result in wasted network calls. it is better to search once the user 
+  pauses or stops typing. This can be achieved using a Debouncer, which uses a timer to delay the search
+  request until it stops receiving text changes for half a second, or any duration that you set.
   
- first you have to creat this class :
+ You have to creat this class :
  ### Delay Search
   ```bash
 class DelaySearch {

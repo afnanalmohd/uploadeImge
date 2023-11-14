@@ -1690,22 +1690,36 @@ DropdownButton2(
 #### Theme
 
 ```bash
-Theme"
-Theme"
+ sliderTheme: const SliderThemeData(
+        thumbColor: Colors.black,
+        activeTrackColor: Colors.white,
+        trackHeight: 5,
+      )
 ```
 
 ### Component
 
 ```bash
-Component"
-Component"
+ Slider(
+            value: controller.quality,
+            max: 100,
+            divisions: 5,
+            onChanged: (double value) {
+              controller.setquality(value);
+      },
+  )
 ```
 
 ### Controller
 
 ```bash
-Controller"
-Controller"
+  double quality = 0.0;
+
+  void setquality(double value) {
+    quality = value;
+    update();
+  }
+
 ```
 
 ##

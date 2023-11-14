@@ -11,7 +11,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return AppBar(
       title: const Text('title'),
       actions: actions,

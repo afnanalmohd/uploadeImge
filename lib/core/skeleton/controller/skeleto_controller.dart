@@ -6,8 +6,8 @@ class SkeletonController extends GetxController with GetSingleTickerProviderStat
 
   @override
   onInit(){
-    super.onInit();
     _animationSetup();
+    super.onInit();
   }
 
   @override
@@ -26,6 +26,4 @@ class SkeletonController extends GetxController with GetSingleTickerProviderStat
     )..addListener(update);
     _animationController.repeat();
   }
-
-
 }

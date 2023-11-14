@@ -8,7 +8,7 @@ import 'core/theme/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: '.env');
+  // await dotenv.load(fileName: '.env');
   await GetStorage.init();
   runApp(const MyApp());
 }
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeApp.lightTheme,
             getPages: AppRoutes.routes,
-            initialRoute: Routes.splashScreen),
+            initialRoute: Routes.navigationScreen),
       ),
     );
   }

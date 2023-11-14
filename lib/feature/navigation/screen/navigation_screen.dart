@@ -11,7 +11,7 @@ class NavigationScreen extends StatelessWidget {
     return GetBuilder<NavigationController>(builder: (controller) {
       return Scaffold(
         appBar: AppBar(
-          title: Text(''),
+          title: const Text(''),
         ),
         bottomNavigationBar: const BottomNavBarWidget(),
         body: IndexedStack(

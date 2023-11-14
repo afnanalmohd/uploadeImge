@@ -1862,7 +1862,7 @@ TextFieldWidget(
             maxLength: 20,
             validator: (value) {
 // validation for test for GetUtils
-              if ((!GetUtils.isLengthBetween(value, 2, 10))) {
+              if (!GetUtils.isLengthBetween(value, 2, 10)) {
                 return 'Letters must be more than two letters and less than 10';
               }
               return null;
@@ -1920,6 +1920,387 @@ class DelaySearch {
  ```
 
 # Others
+
+## Authentication
+
+### Controller
+ ```bash
+class AuthController extends GetxController {
+  final AuthService service = AuthService();
+
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneNumberController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  final TextEditingController firstDigit = TextEditingController();
+  final TextEditingController secondDigit = TextEditingController();
+  final TextEditingController thirdDigit = TextEditingController();
+  final TextEditingController fourthDigit = TextEditingController();
+  final TextEditingController fifthDigit = TextEditingController();
+  final TextEditingController sixthDigit = TextEditingController();
+
+  bool isTimerDone = false;
+  bool isValid = false;
+
+  num otpDigitCount = 0;
+
+  String otp = '';
+
+  bool isVisibility = false;
+
+
+ void visibility() {
+    isVisibility = !isVisibility;
+    update();
+  }
+
+  void updateTimer(bool value) {
+    isTimerDone = value;
+    update();
+  }
+
+  void updateValidate(bool value) {
+    isValid = value;
+    update();
+  }
+
+  void updateOtp(int value, String opr) {
+    if (opr == '+') {
+      otpDigitCount += value;
+    } else if (opr == '-') {
+      otpDigitCount -= 1;
+    }
+    update();
+  }
+
+  void updateAutofill(String value) {
+    otp = value;
+    firstDigit.text = value[0];
+    secondDigit.text = value[1];
+    thirdDigit.text = value[2];
+    fourthDigit.text = value[3];
+    fifthDigit.text = value[4];
+    sixthDigit.text = value[5];
+    update();
+  }
+
+  void clearOTPController() {
+    firstDigit.clear();
+    secondDigit.clear();
+    thirdDigit.clear();
+    fourthDigit.clear();
+    fifthDigit.clear();
+    sixthDigit.clear();
+    update();
+  }
+}
+ ```
+
+## Login with phone
+ ```bash
+
+ final _formKey = GlobalKey<FormState>();
+
+Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              TextFieldWidget(
+                inputFormatters: [
+                  FilteringTextInputFormatter.deny('+966')
+                ],
+                autofillHints: const [AutofillHints.telephoneNumber],
+                text: 'Phone Number',
+                prefixIcon: const Icon(
+                  Icons.phone,
+                ),
+                keyboardType: TextInputType.number,
+                controller: authController.phoneNumberController,
+                hintText: '5xxxxxxxx',
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+
+                  }
+                },
+                child: Text('Enter'),
+              ),
+            ],
+          )),
+ ```
+
+          
+## Login with email
+ ```bash
+
+ final _formKey = GlobalKey<FormState>();
+
+
+ Form(
+        key: _formKey,
+        child:  Center(
+          child: Column(
+            children: [
+              TextFieldWidget(
+                maxLine: 1,
+                controller: authController.emailController,
+                prefixIcon: const Icon(
+                  Icons.email_outlined,
+                ),
+              ),
+              TextFieldWidget(
+                maxLine: 1,
+                controller: authController.passwordController,
+                obscureText  :
+                authController.isVisibility ? false : true,
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    authController.visibility();
+                  },
+                  icon: authController.isVisibility
+                      ? const Icon(
+                    Icons.visibility_off,
+                  )
+                      : const Icon(
+                    Icons.visibility,
+                  ),
+                ),
+                prefixIcon: const Icon(
+                  Icons.lock,
+                ),
+              ),
+              ElevatedButton(onPressed: (){
+            if (_formKey.currentState!.validate()) {
+             // The method here
+                          }
+              }, child: const Text('Enter'))
+            ],
+          ),
+        ),
+      ),
+
+ ```
+
+## Sign Up with Email
+
+ ```bash
+
+ final _formKey = GlobalKey<FormState>();
+ Form(
+            key: formKey,
+            child: Column(
+                TextFieldWidget(
+                  controller: authController.emailController,
+                  obscureText: false,
+                  prefixIcon: const Icon(Icons.email),
+                ),
+                TextFieldWidget(
+                  controller: authController.nameController,
+                  maxLine: 1,
+                  obscureText: false,
+                  validator: (value) {
+                    if (value.toString().isEmpty) {
+                      return 'Enter your Name';
+                    } else if (!RegExp(Validation.validationName)
+                        .hasMatch(value)) {
+                      return "Please enter a correct Name";
+                    } else if (value.toString().length < 2) {
+                      return 'Your Name should be at least 2 long ';
+                    } else {
+                      return null;
+                    }
+                  },
+                  prefixIcon: const Icon(Icons.person),
+                ),
+                GetBuilder<AuthController>(builder: (authController) {
+                  return Column(
+                    children: [
+                      TextFieldWidget(
+                        controller: authController.passwordController,
+                        maxLine: 1,
+                        obscureText:
+                        authController.isVisibility ? false : true,
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              authController.visibility();
+                            },
+                            icon: authController.isVisibility
+                                ? const Icon(
+                              Icons.visibility_off,
+                            )
+                                : const Icon(
+                              Icons.visibility,
+                            )),
+                        prefixIcon: const Icon(
+                          Icons.lock,
+                        ),
+                      ),
+                      TextFieldWidget(
+                        controller:
+                        authController.checkPasswordController,
+                        maxLine: 1,
+                        obscureText:
+                        authController.isVisibility ? false : true,
+                        validator: (value) {
+                          if (value.toString() !=
+                              authController.passwordController.text) {
+                            return 'Your password not corrected';
+                          } else {
+                            return null;
+                          }
+                        },
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              authController.visibility();
+                            },
+                            icon: authController.isVisibility
+                                ? const Icon(
+                              Icons.visibility_off,
+                            )
+                                : const Icon(
+                              Icons.visibility,
+                            )),
+                        prefixIcon: const Icon(
+                          Icons.lock,
+                        ),
+                      ),
+                    ],
+                  );
+                }),
+                ElevatedButton(
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+             
+                    }
+                  },
+                  child: Text('Enter'),
+                ),
+              ],
+            )),
+ ```
+
+
+## OTP
+ ```bash
+
+class OtpScreen extends StatelessWidget {
+  final _formKey = GlobalKey<FormState>();
+
+  OtpScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final size = MediaQuery.of(context).size;
+    return Scaffold(
+      appBar: AppBar(),
+      body: GetBuilder<AuthController>(
+        builder: (authController) {
+          final otpDigits = [
+            authController.firstDigit,
+            authController.secondDigit,
+            authController.thirdDigit,
+            authController.fourthDigit,
+            authController.fifthDigit,
+            authController.sixthDigit,
+          ];
+          return SingleChildScrollView(
+            physics: const NeverScrollableScrollPhysics(),
+            child: Column(
+              children: [
+                if (authController.isValid)
+                  const Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Text(
+                          'You entered an incorrect number',
+                          style: TextStyle(color: errorColor),
+                        ),
+                      )),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: size.width * 0.95,
+                        child: Directionality(
+                          textDirection: TextDirection.ltr,
+                          child: Form(
+                            key: _formKey,
+                            child: Center(
+                              child: ListView.builder(
+                                physics: const NeverScrollableScrollPhysics(),
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                itemCount: otpDigits.length,
+                                itemBuilder: (context, index) {
+                                  return OTPTextField(
+                                    isFocused: true,
+                                    textController: otpDigits[index],
+                                    index: index,
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: size.height * 0.025,
+                      ),
+                      ElevatedButton(
+                          onPressed: authController.otp.length ==
+                                  otpDigits.length
+                              ? () async {
+                                  authController.otp !=
+                                          otpDigits
+                                              .map((e) => e.text)
+                                              .toList()
+                                              .join()
+                                      ? authController.updateValidate(true)
+                                      : authController.updateValidate(false);
+                                  if (!authController.isValid) {}
+                                }
+                              : null,
+                          child: const Text('Next'))
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    authController.isTimerDone
+                        ? TextButton(
+                            style: TextButton.styleFrom(
+                              disabledBackgroundColor: blackColor,
+                              foregroundColor: blackColor,
+                            ),
+                            onPressed: () async {},
+                            child: const Text('press here'))
+                        : const Padding(
+                            padding: EdgeInsets.all(2),
+                            child: Text(
+                                  'press here',
+                              style: TextStyle(color: greyColor),
+                            ),
+                          ),
+                    const Text('To send the code again')
+                  ],
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+ ```
 
 ## Skeleton
 
@@ -1989,6 +2370,9 @@ class Skeleton extends StatelessWidget {
   }
 }
  ```
+
+
+
 
 ## 🦸‍♀️  SuperHero  
 

@@ -1279,7 +1279,111 @@ DefaultTabController(
    update();
  }
 ```
+ ## data picker
+#### Theme
+   theme: ThemeData(
+         // useMaterial3: true,
+         primarySwatch: Colors.green,
+         datePickerTheme: const DatePickerThemeData(
+           headerForegroundColor: Colors.black,
+           headerBackgroundColor: Colors.green,
+           backgroundColor: Colors.white,
+           rangePickerBackgroundColor: Colors.white,
+           rangePickerHeaderBackgroundColor: Colors.green,
+           rangePickerHeaderForegroundColor: Colors.black,
+         ),
+       ),
+```
 
+### Component
+
+```bash
+Column(
+         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+         children: [
+           controller.selectedDateRange == null
+               ? const Center(
+                   child: Text('Press the button to show the picker'),
+                 )
+               : Padding(
+                   padding: const EdgeInsets.all(30),
+                   child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
+               controller.selectedDateRange?.start == controller.selectedDateRange?.end
+                           ?
+               // select only one date
+                   Text(
+                  " date: ${controller.selectedDateRange?.start.toString().split(' ')[0]}",
+                  style: const TextStyle(
+                 fontSize: 24, color: Colors.blue),
+                             )
+                 :
+                // select multible date
+              Column(
+                      children: [
+                         Text(
+                          "Start date: ${controller.selectedDateRange?.start.toString().split(' ')[0]}",
+                     style: const TextStyle( fontSize: 24, color: Colors.blue), ),
+                     Text( "End date: ${controller.selectedDateRange?.end.toString().split(' ')[0]}",
+                style: const TextStyle( fontSize: 24, color: Colors.red)),
+                               ],
+                             ),
+                     ],
+                   ),
+                 ),
+           FloatingActionButton(
+             onPressed: () {
+               controller.dateTimeRangePicker(context);
+             },
+             child: const Icon(Icons.date_range),
+           )
+         ]);
+```
+
+### Controller
+
+```bash
+ DateTimeRange? selectedDateRange;
+
+  void updateNewDateRange(DateTimeRange? newDate) 
+  {
+    selectedDateRange = newDate;
+    update();
+  }
+
+  Future dateTimeRangePicker() async 
+  {
+    DateTimeRange? picked = await showDateRangePicker(
+      context: Get.context!,
+      firstDate: DateTime.now(),
+      lastDate: DateTime(DateTime.now().year + 5),
+      // if you need to control size of datapicker use this :
+      // builder: (context, child) {
+      //   return Center(
+      //     child: ConstrainedBox(
+      //       constraints: const BoxConstraints(maxWidth: 400.0, maxHeight: 560),
+      //       child: child,
+      //     ),
+      //   );
+      // },
+    );
+    if (picked == null) return;
+    updateNewDateRange(picked);
+    // if you want use time picker use this : 
+    final initialTime = picked == null
+        ? TimeOfDay(hour: DateTime.now().hour, minute: DateTime.now().minute)
+        : TimeOfDay(
+            hour: picked.duration.inHours, minute: picked.duration.inMinutes);
+    // ignore:
+    final newTime = await showTimePicker(
+      context: Get.context!,
+      initialTime: initialTime,
+    );
+    if (newTime == null) return;
+    DateTime(
+        picked.start.year, picked.start.month, newTime.hour, newTime.minute);
+  }
 ##
 
 <img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/c5a3f789-dd7c-480b-aa03-52af879e5e59"
@@ -1923,111 +2027,6 @@ class Skeleton extends StatelessWidget {
   }
 }
  
- ## data picker
-#### Theme
-   theme: ThemeData(
-         // useMaterial3: true,
-         primarySwatch: Colors.green,
-         datePickerTheme: const DatePickerThemeData(
-           headerForegroundColor: Colors.black,
-           headerBackgroundColor: Colors.green,
-           backgroundColor: Colors.white,
-           rangePickerBackgroundColor: Colors.white,
-           rangePickerHeaderBackgroundColor: Colors.green,
-           rangePickerHeaderForegroundColor: Colors.black,
-         ),
-       ),
-```
-
-### Component
-
-```bash
-Column(
-         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-         children: [
-           controller.selectedDateRange == null
-               ? const Center(
-                   child: Text('Press the button to show the picker'),
-                 )
-               : Padding(
-                   padding: const EdgeInsets.all(30),
-                   child: Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-               controller.selectedDateRange?.start == controller.selectedDateRange?.end
-                           ?
-               // select only one date
-                   Text(
-                  " date: ${controller.selectedDateRange?.start.toString().split(' ')[0]}",
-                  style: const TextStyle(
-                 fontSize: 24, color: Colors.blue),
-                             )
-                 :
-                // select multible date
-              Column(
-                      children: [
-                         Text(
-                          "Start date: ${controller.selectedDateRange?.start.toString().split(' ')[0]}",
-                     style: const TextStyle( fontSize: 24, color: Colors.blue), ),
-                     Text( "End date: ${controller.selectedDateRange?.end.toString().split(' ')[0]}",
-                style: const TextStyle( fontSize: 24, color: Colors.red)),
-                               ],
-                             ),
-                     ],
-                   ),
-                 ),
-           FloatingActionButton(
-             onPressed: () {
-               controller.dateTimeRangePicker(context);
-             },
-             child: const Icon(Icons.date_range),
-           )
-         ]);
-```
-
-### Controller
-
-```bash
- DateTimeRange? selectedDateRange;
-
-  void updateNewDateRange(DateTimeRange? newDate) 
-  {
-    selectedDateRange = newDate;
-    update();
-  }
-
-  Future dateTimeRangePicker() async 
-  {
-    DateTimeRange? picked = await showDateRangePicker(
-      context: Get.context!,
-      firstDate: DateTime.now(),
-      lastDate: DateTime(DateTime.now().year + 5),
-      // if you need to control size of datapicker use this :
-      // builder: (context, child) {
-      //   return Center(
-      //     child: ConstrainedBox(
-      //       constraints: const BoxConstraints(maxWidth: 400.0, maxHeight: 560),
-      //       child: child,
-      //     ),
-      //   );
-      // },
-    );
-    if (picked == null) return;
-    updateNewDateRange(picked);
-    // if you want use time picker use this : 
-    final initialTime = picked == null
-        ? TimeOfDay(hour: DateTime.now().hour, minute: DateTime.now().minute)
-        : TimeOfDay(
-            hour: picked.duration.inHours, minute: picked.duration.inMinutes);
-    // ignore:
-    final newTime = await showTimePicker(
-      context: Get.context!,
-      initialTime: initialTime,
-    );
-    if (newTime == null) return;
-    DateTime(
-        picked.start.year, picked.start.month, newTime.hour, newTime.minute);
-  }
 
 ## 🦸‍♀️  SuperHero  
 

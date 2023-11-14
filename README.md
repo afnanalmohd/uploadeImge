@@ -2486,6 +2486,16 @@ class Skeleton extends StatelessWidget {
 }
 
  ```
+
+# Data persistence
+
+## Local database (SQLite)
+
+https://github.com/SirinK2/sqlite_template.git
+
+## API (HTTP request)
+
+https://github.com/SirinK2/api_http_request.git
  
 
 

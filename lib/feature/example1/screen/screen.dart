@@ -5,8 +5,6 @@ class Screen1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('Example1'),
-    );
+    return const Center(child:  Text('Example1'));
   }
 }

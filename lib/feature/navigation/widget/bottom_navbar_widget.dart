@@ -7,7 +7,6 @@ class BottomNavBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return GetBuilder<NavigationController>(
       builder: (controller) {
         return BottomNavigationBar(
@@ -29,12 +28,6 @@ class BottomNavBarWidget extends StatelessWidget {
               activeIcon: Icon(Icons.library_add_check_sharp),
               icon:Icon(Icons.library_add_check_sharp),
               label: 'Orders',
-            ),
-
-            BottomNavigationBarItem(
-              activeIcon: Icon(Icons.person_search),
-              icon:Icon(Icons.person_search),
-              label: 'Users',
             ),
 
           ],

@@ -44,11 +44,12 @@ flutter_launcher_icons:
 
 # after adding splash image or icon launcher do this steps in terminal
 
+#Splach
 #  flutter clean
 #  flutter pub get
 #  flutter pub run flutter_native_splash:create
 
-# icon
+#Icon
 #  flutter clean
 #  flutter pub get
 #  flutter pub run flutter_launcher_icons

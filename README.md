@@ -2531,6 +2531,91 @@ class Skeleton extends StatelessWidget {
 
  ```
 
+ ## Timer
+
+ ### Controller
+ ```bash
+  Timer? countdownTimer;
+  bool enableButton = true;
+  bool isTimeOver = false
+  
+  
+  ;
+  Duration myduration = const Duration(minutes: 1);
+
+  startTimer() {
+    countdownTimer =
+        Timer.periodic(const Duration(seconds: 1), (timer) => setCountDown());
+    update();
+  }
+
+  String strDigits(int n) => n.toString().padLeft(2, '0');
+
+  var hours = " ".obs;
+  var minutes = " ".obs;
+  var seconds = " ".obs;
+
+  setCountDown() {
+    const reduceBy = 1;
+    final seconds = myduration.inSeconds - reduceBy;
+    if (seconds < 0) {
+      countdownTimer!.cancel();
+      enableButton = true;
+      isTimeOver = true;
+      myduration = const Duration(minutes: 1);
+      
+    } else {
+      myduration = Duration(seconds: seconds);
+        enableButton = false;
+      isTimeOver = false;
+    }
+    update();
+  }
+ ```
+
+### Component
+ ```bash
+controller.hours.value =
+          controller.strDigits(controller.myduration.inHours.remainder(24));
+      controller.minutes.value =
+          controller.strDigits(controller.myduration.inMinutes.remainder(60));
+      controller.seconds.value =
+          controller.strDigits(controller.myduration.inSeconds.remainder(60));
+           return Scaffold(
+
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                  onPressed: controller.enableButton && !controller.isTimeOver || controller.enableButton && controller.isTimeOver
+                      ? () {
+                          controller.enableButton = false;
+                          controller.isTimeOver = false;
+                          controller.startTimer();
+                        }
+                      : null,
+                  child: Text('Start Timer')),
+              SizedBox(
+                height: 12,
+              ),
+              Text(controller.enableButton && !controller.isTimeOver 
+                  ? "Press the button to start the timer"
+                  : controller.enableButton && controller.isTimeOver
+                      ? "Time's up"
+                      : "${controller.hours.value.toString()}:${controller.minutes.value.toString()}:${controller.seconds.value.toString()}"),
+            ],
+          ),
+        ),
+      );
+
+
+
+ ```
+ 
+
+
+
 # Data persistence
 
 ## Local database (SQLite)

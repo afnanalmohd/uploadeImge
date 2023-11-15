@@ -39,21 +39,22 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 #### Theme
 
 ```bash
-elevatedButtonTheme: ElevatedButtonThemeData(
-       style: ElevatedButton.styleFrom(
-     textStyle: const TextStyle(
-       fontFamily: 'GE-SS-Two',
-       fontWeight: FontWeight.w500,
-       color: whiteColor,
-       fontSize: 16,
-     ),
-     disabledBackgroundColor: primaryBananaColor,
-     disabledForegroundColor: whiteColor,
-     minimumSize: const Size(398, 48),
-     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-     elevation: 0.0,
-     backgroundColor: primaryOrangeColor,
-   )),
+     elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            textStyle: const TextStyle(
+              fontFamily: 'GE-SS-Two',
+              fontWeight: FontWeight.w500,
+              color: Colors.white,
+              fontSize: 16,
+            ),
+            disabledBackgroundColor: Colors.orange.shade100,
+            disabledForegroundColor: Colors.white,
+            minimumSize: const Size(398, 48),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            elevation: 0.0,
+            backgroundColor: Colors.orange,
+          )
+      ),
 ```
 
 ### Component
@@ -80,7 +81,7 @@ elevatedButtonTheme: ElevatedButtonThemeData(
 ```bash
  filledButtonTheme: FilledButtonThemeData(
  style: ButtonStyle(
-backgroundColor: MaterialStatePropertyAll(Colors.black),
+backgroundColor: MaterialStatePropertyAll(Colors.orange),
 foregroundColor:  MaterialStatePropertyAll(Colors.white),
        )
 ```
@@ -94,33 +95,6 @@ foregroundColor:  MaterialStatePropertyAll(Colors.white),
                ),
 ```
 
-##
-
-<img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/6e1c10f7-b269-440b-8e41-e0d5e561e459"
- alt="Filled Button" >
-<br>
-
-</br>
-
-#### Theme
-
-```bash
-  filledButtonTheme: FilledButtonThemeData(
-       style: ButtonStyle(
-         backgroundColor: MaterialStatePropertyAll(Colors.black),
-foregroundColor:  MaterialStatePropertyAll(Colors.white),
-       )
-     )
-```
-
-### Component
-
-```bash
-  FilledButton.tonal(
-                 onPressed: () {},
-                 child: const Text('press here'),
-               ),
-```
 
 ##
 
@@ -134,22 +108,22 @@ foregroundColor:  MaterialStatePropertyAll(Colors.white),
 #### Theme
 
 ```bash
-outlinedButtonTheme: OutlinedButtonThemeData(
-       style: OutlinedButton.styleFrom(
-     foregroundColor: primaryOrangeColor,
-     textStyle: const TextStyle(
-       fontFamily: 'GE-SS-Two',
-       fontWeight: FontWeight.w300,
-       color: primaryOrangeColor,
-       fontSize: 16,
-     ),
-     side: const BorderSide(color: primaryOrangeColor),
-     disabledBackgroundColor: primaryBananaColor,
-     minimumSize: const Size(398, 48),
-     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-     elevation: 0.0,
-     backgroundColor: whiteColor,
-   )),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+            foregroundColor: Colors.orange,
+            textStyle: const TextStyle(
+              fontFamily: 'GE-SS-Two',
+              fontWeight: FontWeight.w300,
+              color: Colors.white,
+              fontSize: 16,
+            ),
+            side: const BorderSide(color: Colors.orange),
+            disabledBackgroundColor: Colors.orange.shade100,
+            minimumSize: const Size(398, 48),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            elevation: 0.0,
+            backgroundColor: Colors.transparent,
+          )),
 ```
 
 ### Component
@@ -175,12 +149,12 @@ OutlinedButton(
 #### Theme
 
 ```bash
-  textButtonTheme: TextButtonThemeData(
-     style: TextButton.styleFrom(
-       disabledBackgroundColor: greyCoinColor,
-       foregroundColor: greyCoinColor,
-     ),
-   ),
+          textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(
+              disabledBackgroundColor: Colors.orange.shade100,
+              foregroundColor: Colors.orange,
+            ),
+          ),
 ```
 
 ### Component
@@ -207,7 +181,7 @@ TextButton(
 
 ```bash
 floatingActionButtonTheme: FloatingActionButtonThemeData(
-       backgroundColor: Colors.blue,
+       backgroundColor: Colors.orange,
        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
        elevation: 0.0,
      )
@@ -235,8 +209,8 @@ FloatingActionButton(
 
 ```bash
 floatingActionButtonTheme: FloatingActionButtonThemeData(
-       backgroundColor: Colors.blue,
-       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+       backgroundColor: Colors.orange,
+       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
        elevation: 0.0,
      )
 ```
@@ -264,14 +238,8 @@ floatingActionButtonTheme: FloatingActionButtonThemeData(
 #### Theme
 
 ```bash
-             iconTheme: const IconThemeData(color: Colors.red),
-             primaryIconTheme: const IconThemeData(color: Colors.blue),
-             iconButtonTheme: const IconButtonThemeData(
-               style: ButtonStyle(
-                 foregroundColor: MaterialStatePropertyAll(Colors.green),
-                 backgroundColor: MaterialStatePropertyAll(Colors.green),
-               ),
-             ),
+              iconTheme: const IconThemeData(color: Colors.orange),
+
 ```
 
 ### Component
@@ -295,12 +263,17 @@ IconButton(
 #### Theme
 
 ```bash
-segmentedButtonTheme: SegmentedButtonThemeData(
-    style: ButtonStyle(
-    backgroundColor:  MaterialStatePropertyAll(Colors.white),
-   foregroundColor: MaterialStatePropertyAll(Colors.black),
-                       ),
-             )
+          segmentedButtonTheme: SegmentedButtonThemeData(
+          style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.resolveWith<Color>(
+            (Set<MaterialState> states) {
+              if (states.contains(MaterialState.selected)) {
+                return Colors.orange;
+              }
+              return Colors.white;
+            },
+          )),
+        )
 ```
 
 ### Controller
@@ -314,8 +287,7 @@ Set <String> selection = {'S','M','L'};
   ButtonSegment<String>(value: 'large', label: Text('L')),
 ];
 
- void updateSelection(Set<String> newSelection)
-  {
+ void updateSelection(Set<String> newSelection){
   selection = newSelection;
   update();
 }
@@ -324,19 +296,17 @@ Set <String> selection = {'S','M','L'};
 ### Component
 
 ```bash
- GetBuilder<Controller>(builder: (controller) {
-                     return SegmentedButton<String>
-                     (
-                       segments: controller.selectionSegment,
-                       selected: controller.selection,
-                       onSelectionChanged: (Set<String> newSelection) {
-                         controller.updateSelection(newSelection);
-                       },
-                       multiSelectionEnabled: true,
-                       showSelectedIcon: false,
-
-                     );
-                   })
+GetBuilder<Controller>(builder: (controller) {
+          return SegmentedButton<String>(
+            segments: controller.selectionSegment,
+            selected: controller.selection,
+            onSelectionChanged: (Set<String> newSelection) {
+              controller.updateSelection(newSelection);
+            },
+            multiSelectionEnabled: true,
+            showSelectedIcon: true,
+          );
+        })
 
 ```
 
@@ -352,13 +322,13 @@ Set <String> selection = {'S','M','L'};
 #### Theme
 
 ```bash
-toggleButtonsTheme: ToggleButtonsThemeData(
-       color: blackColor,
-             selectedColor: whiteColor,
-             fillColor: Colors.transparent,
-             borderWidth: 0,
-             borderColor: Colors.transparent,
-     )
+            useMaterial3: true,
+            toggleButtonsTheme: const ToggleButtonsThemeData(
+              selectedColor: Colors.orange,
+              fillColor: Colors.transparent,
+              borderWidth: 0,
+              borderColor: Colors.transparent,
+            )),
 ```
 
 ### Controller
@@ -378,27 +348,87 @@ toggleButtonsTheme: ToggleButtonsThemeData(
 ### Component
 
 ```bash
- GetBuilder<Controller>(
-                        builder: (controller) {
-                          return ToggleButtons(
-             children: [
-               TextButtonVenueWidget(
-                 index: 0,
+ GetBuilder<ActionController>(builder: (controller) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              ToggleButtons(
+                renderBorder: false,
+                isSelected: controller.isSelectedList,
+                onPressed: (int index) => controller.updateSelectIndex(index),
+                constraints: BoxConstraints.expand(width: size.width * 0.45),
+                children: [
+                  ToggleButtonViewWidget( controller: controller, index: 0,title: 'Option1',),
+                  ToggleButtonViewWidget( controller: controller, index: 1,title: 'Option2',)
+                ],
+              ),
+              Divider(
+                height: size.height * 0.001,
+                thickness: 1,
+                color: Colors.grey,
+              ),
+              SizedBox(
+                height: size.height * 0.014,
+              ),
+              if (controller.selectedIndex == 0)
+                  const Text(' widget 1')
+              else
+                const Text(' widget 2')
+            ],
+          );
+        })
 
-                 text: 'option 1',
-               ),
-               TextButtonVenueWidget(
-                 index: 1,
+```
 
-                 text: 'option 2',
-               )
-             ],
-             isSelected: controller.isSelectedList,
-             onPressed: (int index) => controller.selectIndex(index),
-             constraints: BoxConstraints.expand(height: 60, width: size.width * 0.45),
-           );
-                        }
-                      ),
+```bash
+class ToggleButtonViewWidget extends StatelessWidget {
+ const  ToggleButtonViewWidget({
+    super.key,
+    required this.controller,
+    required this.index,
+     required this.title,
+  });
+
+  final String title;
+  final ActionController controller;
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final textTheme = Theme.of(context).textTheme;
+    return Column(
+      children: [
+        TextButton(
+          onPressed: () {
+            controller.updateSelectIndex(index);
+          },
+          child: Text(
+            title,
+            style: textTheme.headlineSmall!.copyWith(
+              color: controller.selectedIndex == index ? Colors.orange : null,
+            ),
+          ),
+        ),
+        Container(
+          height: size.height * 0.003,
+          width: controller.selectedIndex == index ? 97 : 0,
+          decoration: buildBoxDecoration(),
+        ),
+      ],
+    );
+  }
+}
+```
+
+```bash
+BoxDecoration buildBoxDecoration() {
+  return const BoxDecoration(
+    borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(100), topRight: Radius.circular(100)),
+    color: Colors.orange,
+  );
+}
 ```
 
 ![communication](https://github.com/The-Garage-Tech-Team/design_system_flutter/assets/53023171/30a374f1-9a50-48e1-add9-4fdadbcb511f) <a id="communication"></a>

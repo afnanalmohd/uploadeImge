@@ -778,38 +778,66 @@ class GlobalSnackBar {
 #### Theme
 
 ```bash
-dialogTheme: const DialogTheme(
-       backgroundColor: greyCoffeeColor,
-       shadowColor: Colors.white,
-     )
+          dialogTheme: const DialogTheme(
+          backgroundColor: Colors.white,
+          shadowColor: Colors.black,
+              shape:  RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12),
+                  )
+              ),
+        )
 ```
+
+
+## Alert Dialog
+
+### Component
+
+```bash
+AlertDialog(
+          title: const Text('AlertDialog Title'),
+          content: const SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('This is a demo alert dialog.'),
+                Text('Would you like to approve of this message?'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Approve'),
+              onPressed: () {
+              Get.back();
+              },
+            ),
+          ],
+        )
+```
+
+## Dialog
 
 ### Component
 
 ```bash
 Dialog(
-    child: Column(
-     children: [
-       const Text(
-         'are YouSure Cancel',
-       ),
-       Row(
-         children: [
-           OutlinedButton(
-             onPressed: () {},
-             child: Text(
-               'No',
-             ),
-           ),
-           ElevatedButton(
-             onPressed: () {},
-             child: Text('yes'),
-           ),
-         ],
-       ),
-     ],
-   )
-);
+            child: SizedBox(
+              height: 150,
+              child: Column(
+          children: [
+              Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    icon: const Icon(Icons.close_outlined)),
+              )
+          ],
+        ),
+            )
+        )
 ```
 
 ##
@@ -824,23 +852,69 @@ Dialog(
 #### Theme
 
 ```bash
-bottomSheetTheme: const BottomSheetThemeData(
-       backgroundColor: whiteColor,
-       elevation: 1.0,
-       modalElevation: 1.0,
-       shape: RoundedRectangleBorder(
-           borderRadius: BorderRadius.vertical(top: Radius.circular(28.0))),
-     )
-);
+         useMaterial3: true,
+            bottomSheetTheme: const BottomSheetThemeData(
+              backgroundColor: Colors.white,
+              elevation: 1.0,
+              modalElevation: 1.0,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(topRight: Radius.circular(28.0),
+                    topLeft: Radius.circular(28.0),
+                  )
+              ),
+            )
 ```
+## Bottom Sheet
 
 ### Component
 
 ```bash
-Get.bottomSheet(
-                        ignoreSafeArea: false,
-                        isScrollControlled: true,
-                        Widget());
+ElevatedButton(
+          child: const Text('showBottomSheet'),
+          onPressed: () {
+            showBottomSheet<void>(
+              context: context,
+              builder: (BuildContext context) {
+                return  SizedBox(
+                  height: 200,
+                  width: Get.width,
+                  child: const Column(
+                    children: [
+                      Text('Bottom Sheet'),
+                    ],
+                  ),
+                );
+              },
+            );
+          },
+        ),
+
+```
+## Modal Bottom Sheet
+
+### Component
+
+```bash
+ElevatedButton(
+          child: const Text('showModalBottomSheet'),
+          onPressed: () {
+            showModalBottomSheet<void>(
+              showDragHandle:true,
+               useSafeArea : true,
+              context: context,
+              builder: (BuildContext context) {
+                return const SizedBox(
+                  height: 200,
+                  child: Column(
+                    children:[
+                      Text('Modal Bottom Sheet'),
+                    ],
+                  ),
+                );
+              },
+            );
+          },
+        ),
 
 ```
 
@@ -856,31 +930,32 @@ Get.bottomSheet(
 #### Theme
 
 ```bash
- cardTheme: const CardTheme(
-     elevation: 0.0,
-     color: whiteColor,
-     shape: RoundedRectangleBorder(
-       borderRadius: BorderRadius.all(Radius.circular(4)),
-     ),
-   ),
+       splashColor: Colors.blue.withAlpha(30),
+          cardTheme: const CardTheme(
+            elevation: 0.0,
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(4)),
+            ),
+          ),
 ```
 
 ### Component
 
 ```bash
-   Card(
-       child: Column(
-         children: [
-           SizedBox(
-             height: size.height / 29.2,
-           ),
-           Text(" Extras", style: textTheme.displayLarge),
-           SizedBox(
-             height: size.height / 56.26,
-           ),
-         ],
-       ),
-     );
+Card(
+          clipBehavior: Clip.hardEdge,
+          child: InkWell(
+            onTap: () {
+
+            },
+            child: const SizedBox(
+              width: 390,
+              height: 100,
+              child: Text('A card that can be tapped'),
+            ),
+          ),
+        )
 ```
 
 ##
@@ -926,19 +1001,12 @@ const Divider(
 ### Component
 
 ```bash
- ListTile(
-           leading: CircleAvatar(child: Text('B')),
-           title: Text('Headline'),
-           subtitle: Text(
-          'Longer supporting text to demonstrate how the text.'),
-         ),
-```
-
-### Controller
-
-```bash
-Controller"
-Controller"
+const ListTile(
+          leading: CircleAvatar(child: Text('B')),
+          title: Text('Headline'),
+          subtitle: Text(
+              'Longer supporting text to demonstrate how the text.'),
+        ),
 ```
 
 ##
@@ -953,22 +1021,22 @@ Controller"
 ### Component
 
 ```bash
-   GridView.builder(
-           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-             crossAxisCount: 2,
-             childAspectRatio: 0.93,
-             childAspectRatio: 0.8,
-             mainAxisSpacing: 8.0,
-             crossAxisSpacing: 10.0,
-             maxCrossAxisExtent: 200,
-           ),
-           shrinkWrap: true,
-           physics: const NeverScrollableScrollPhysics(),
-           itemCount: 2,
-           itemBuilder: (_, index) {
-             return Widget();
-           },
-         );
+GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 0.8,
+        mainAxisSpacing: 8.0,
+        crossAxisSpacing: 10.0,
+      ),
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: 4,
+      itemBuilder: (_, index) {
+        return Container(
+          color: Colors.grey,
+        );
+      },
+    );
 
 ```
 
@@ -984,11 +1052,20 @@ Controller"
 ### Component
 
 ```bash
-ListView.builder(
-         itemCount: 3,
-         itemBuilder: (BuildContext context, int index) {
-           return widget()
-          },
+Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: 3,
+          itemBuilder: (BuildContext context, int index) {
+        return Card(
+          child: Container(
+            color: Colors.grey,
+            height: 150,
+            width: 150,
+          ),
+        );}),
+    );
 ```
 
 <br>

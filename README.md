@@ -442,43 +442,77 @@ BoxDecoration buildBoxDecoration() {
 
 </br>
 
-#### Theme
-
-### package
-
+#### call 
 ```bash
-badges: ^3.1.2
 
+    child: GetBuilder<MyController>(
+            builder: (controller) {
+              return Badge(
+                addClick: () {
+                  myController.add();
+                },
+                subClick: () {
+                  myController.sub();
+                },
+              );
+            },
+          ),
 ```
 
 ### Component
 
 ```bash
-GetBuilder<Controller>(builder: (controller) {
- return badges.Badge(
-   position: BadgePosition.topEnd(top: 0, end: 3),
-   showBadge: true,
-   badgeContent: Text(
-     controller.quantity().toString(),
-     style: const TextStyle(color: Colors.color),
-   ),
-   badgeAnimation: const badges.BadgeAnimation.slide(
-     loopAnimation: false,
-     curve: Curves.fastOutSlowIn,
-   ),
-   badgeStyle: const badges.BadgeStyle(
-     shape: badges.BadgeShape.circle,
-     borderSide: BorderSide(color: Color, width: 2),
-     elevation: 0,
-   ),
-   child: IconButton(
-     onPressed: () {
+class Badge extends StatelessWidget {
+  final Function addClick;
+  final Function subClick;
 
-     },
-     icon: const Icon(Icons.icon),
-   ),
- );
-});
+  const Badge({
+    Key? key,
+    required this.addClick,
+    required this.subClick,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final myController = Get.find<MyController>();
+    return Container(
+      color: Colors.grey,
+      child: Stack(
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                onPressed: myController.add,
+                icon: const Icon(Icons.add_circle),
+              ),
+              IconButton(
+                onPressed: myController.sub,
+                icon: const Icon(Icons.remove_circle),
+              ),
+            ],
+          ),
+          if (myController.list.isNotEmpty)
+            Positioned(
+              top: 0,
+              right: 3,
+              child: Container(
+                padding: const EdgeInsets.all(4),
+                decoration: const BoxDecoration(
+                  color: Colors.red,
+                  shape: BoxShape.circle,
+                ),
+                child: Text(
+                  Get.find<MyController>().list.length.toString(),
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
 ```
 
 ### Controller
@@ -486,17 +520,22 @@ GetBuilder<Controller>(builder: (controller) {
 using List to counting the number in Badges.
 
 ```bash
-List<Model> list = [];
-```
 
-```
-int quantity() {
- if (list.isEmpty) {
-   return 0;
- } else {
-   return list
-      .length;
- }
+class MyController extends GetxController {
+  List<String> list = [];
+
+  void add() {
+    list.add(' ');
+    update();
+  }
+
+  void sub() {
+    if (list.isNotEmpty) {
+      list.removeLast();
+      update();
+    }
+  }
+}
 ```
 
 ##

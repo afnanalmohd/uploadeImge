@@ -1086,19 +1086,20 @@ Container(
 ### Theme
 
 ```bash
-appBarTheme: const AppBarTheme(
-   titleTextStyle: TextStyle(
-       fontFamily: 'Mona-Sans',
-       fontWeight: FontWeight.w800,
-       fontSize: 20,
-       color: mainColor),
-   systemOverlayStyle: SystemUiOverlayStyle(
-     statusBarColor: Colors.transparent,
-     statusBarBrightness: Brightness.light,
-   ),
-   elevation: 0.5,
-   backgroundColor: whiteColor,
-   iconTheme: IconThemeData(color: greyMirageColor)),
+        appBarTheme:  const AppBarTheme(
+            titleTextStyle: TextStyle(
+                fontFamily: 'Mona-Sans',
+                fontWeight: FontWeight.w800,
+                fontSize: 20,
+                color: Colors.orange),
+            systemOverlayStyle: SystemUiOverlayStyle(
+              statusBarColor: Colors.transparent,
+              statusBarBrightness: Brightness.light,
+              statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+            ),
+            elevation: 0.5,
+            backgroundColor: Colors.white,
+            iconTheme: IconThemeData(color: Colors.grey)),
 ```
 
 ### Component
@@ -1114,63 +1115,55 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
  @override
  Widget build(BuildContext context) {
    return AppBar(
-     leading: IconButton(
-     onPressed: () {},
-     icon: Icon(Icons.add_alert),
-   ),
-     centerTitle: true,
-     title: const Text('title'),
-     actions: [
-         TextButton(
-           style: style,
-           onPressed: () {},
-           child: const Text('Action 1'),
-         ),
-         TextButton(
-           style: style,
-           onPressed: () {},
-           child: const Text('Action 2'),
-         ),
-       ],
-   );
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.person),
+        ),
+        centerTitle: true,
+        title: const Text('Title'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.menu),
+          ),
+        ],
+      );
  }
 }
 ```
+# BottomAppBar
+
+### Theme
 
 ```bash
-navigationBarTheme: NavigationBarThemeData(
-         backgroundColor: Colors.white,
-         elevation: 0.0,
-         shadowColor: Colors.grey.shade400,
-         indicatorColor: Colors.blue),
-         bottomAppBarTheme: BottomAppBarTheme(
-           color: Colors.white,
-elevation: 0.0,
-height: 12,
-shadowColor: Colors.black,
-shape: storage
-         )
+     bottomAppBarTheme: const BottomAppBarTheme(
+            color: Colors.white,
+            elevation: 0.0,
+            height: 12,
+            shadowColor: Colors.black,
+            // shape: storage
+          ),
 ```
 
 ### Component
 
 ```bash
-bottomNavigationBar: BottomAppBar(
-         child: Row(
-           children: [
+BottomAppBar(
+          child: Row(
+            children: [
               IconButton(
-             tooltip: 'Search',
-             icon: const Icon(Icons.search),
-             onPressed: () {},
-           ),
-           IconButton(
-             tooltip: 'Favorite',
-             icon: const Icon(Icons.favorite),
-             onPressed: () {},
-           ),
-           ],
-         ),
-       ),
+                tooltip: 'Search',
+                icon: const Icon(Icons.search),
+                onPressed: () {},
+              ),
+              IconButton(
+                tooltip: 'Favorite',
+                icon: const Icon(Icons.favorite),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        )
 ```
 
 ##
@@ -1394,25 +1387,28 @@ DefaultTabController(
 #### Theme
 
 ```bash
-   checkboxTheme: CheckboxThemeData(
-     shape: RoundedRectangleBorder(
-       borderRadius: BorderRadius.circular(5),
-     ),
-     checkColor: MaterialStateProperty.all(whiteColor),
-     fillColor: MaterialStateProperty.all(Colors.transparent),
-   ),
+    checkboxTheme: CheckboxThemeData(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+            checkColor: MaterialStateProperty.all(Colors.white),
+            fillColor: MaterialStateProperty.all(Colors.transparent),
+          ),
 ```
 
 ### Component
 
 ```bash
-       Checkbox(
-         activeColor: Colors.green,
-         value: controller.isCheck,
-         onChanged: (bool? value) {
-         controller.updateCheckBox(value!);
-         },
-       ),
+ GetBuilder<Controller>(builder: (controller) {
+    return Checkbox(
+    activeColor: Colors.orange,
+    value: controller.isCheck,
+    onChanged: (bool? value) {
+    controller.updateCheckBox(value!);
+    },
+    );
+    });
+
 ```
 
 ### Controller
@@ -1425,7 +1421,59 @@ DefaultTabController(
    update();
  }
 ```
+
+
+<img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/c5a3f789-dd7c-480b-aa03-52af879e5e59"
+ alt="Filled Button" >
+
+<br>
+
+</br>
+
+### Theme
+
+```bash
+ chipTheme: ChipThemeData(
+     secondarySelectedColor: whiteColor,
+     secondaryLabelStyle: const TextStyle(color: primaryOrangeColor),
+     backgroundColor: whiteColor,
+     disabledColor: whiteColor,
+     selectedColor: whiteColor,
+     shape: RoundedRectangleBorder(
+       borderRadius: BorderRadius.circular(12),
+       side: const BorderSide(
+         color: greySteelColor,
+       ),
+     ),
+   ),
+```
+
+### Component
+
+```bash
+ChoiceChip(
+         selectedColor: whiteColor,
+         padding: const EdgeInsets.symmetric(horizontal: 16.0),
+         label: const Text('item'),
+         // selected chip value
+         selected: _value == index,
+         // onSelected method
+         onSelected: (bool selected) {},
+),
+```
+
+##
+
+<img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/f248dbde-dab8-4dca-a9a5-5a6f473dcb95"
+ alt="Filled Button" >
+
+<br>
+
+</br>
+
+
  ## data picker
+ 
 #### Theme
    theme: ThemeData(
          // useMaterial3: true,
@@ -1530,57 +1578,11 @@ Column(
     DateTime(
         picked.start.year, picked.start.month, newTime.hour, newTime.minute);
   }
-##
-
-<img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/c5a3f789-dd7c-480b-aa03-52af879e5e59"
- alt="Filled Button" >
-
-<br>
-
-</br>
-
-#### Theme
-
-```bash
- chipTheme: ChipThemeData(
-     secondarySelectedColor: whiteColor,
-     secondaryLabelStyle: const TextStyle(color: primaryOrangeColor),
-     backgroundColor: whiteColor,
-     disabledColor: whiteColor,
-     selectedColor: whiteColor,
-     shape: RoundedRectangleBorder(
-       borderRadius: BorderRadius.circular(12),
-       side: const BorderSide(
-         color: greySteelColor,
-       ),
-     ),
-   ),
 ```
 
-### Component
+This is with Package:
 
-```bash
-ChoiceChip(
-         selectedColor: whiteColor,
-         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-         label: const Text('item'),
-         // selected chip value
-         selected: _value == index,
-         // onSelected method
-         onSelected: (bool selected) {},
-),
-```
-
-##
-
-<img align="left" width="300" height="full" src="https://github.com/afnanalmohd/task_flutterr/assets/53023171/f248dbde-dab8-4dca-a9a5-5a6f473dcb95"
- alt="Filled Button" >
-
-<br>
-
-</br>
-
-### Pakage
+### Package
 
 ```bash
  syncfusion_flutter_datepicker: ^22.1.37
@@ -1772,39 +1774,66 @@ DropdownButton2(
 #### Theme
 
 ```bash
-   radioTheme: RadioThemeData(
-     overlayColor: MaterialStateProperty.all(whiteColor),
-     fillColor: MaterialStateProperty.all(Colors.transparent),
-   ),
+     radioTheme: RadioThemeData(
+            overlayColor: MaterialStateProperty.all(Colors.grey),
+            fillColor: MaterialStateProperty.all(Colors.transparent),
+          ),
 ```
 
 ### Component
 
 ```bash
-         Row(
-                         children: [
-                           SizedBox(
-                             width: 20,
-                             height: 20,
-                             child: Radio(
-                               value: 1,
-                               groupValue: controller.radioButtonId,
-                               onChanged: (value) {
-                                 controller.setSelectedFoodId(value = 1);
-                                 controller.setSelectedFood('Option1');
-                               },
-                               activeColor: Colors.red,
-                             ),
-                           ),
-                           const SizedBox(width: 10,),
-                           Text(
-                             'Option1',
-                             style: textTheme.headlineMedium
-                                 ?.copyWith(fontSize: 14),
-                           ),
+     Column(
+          children: [
+            RadioButton(text: 'Option1',newValue: 1,),
+            RadioButton(text: 'Option2',newValue: 2,),
+            RadioButton(text: 'Option3',newValue: 3,),
+          ],
+        )
+```
 
-                         ],
-                       ),
+```bash
+class RadioButton extends StatelessWidget {
+  final String text;
+  final int newValue;
+  final selectionController = Get.put(SelectionController());
+
+  RadioButton({
+    super.key,
+    required this.newValue,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<SelectionController>(builder: (controller)
+    {
+      return Row(
+        children: [
+          SizedBox(
+            width: 20,
+            height: 20,
+            child: Radio(
+              value: newValue,
+              groupValue: controller.radioButtonId,
+              onChanged: (value) {
+                controller.setSelectedFoodId(value = newValue);
+                controller.updateSelected(text);
+              },
+              activeColor: Colors.orange,
+            ),
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          Text(
+            text,
+          ),
+        ],
+      );
+    });
+    }
+  }
 ```
 
 ### Controller

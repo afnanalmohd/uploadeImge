@@ -1761,24 +1761,12 @@ DropdownButton2(
  update();
  }
 ```
-## DropDown Button in Flutter Using DropDownButtonFormField 
+## DropDownButtonFormField Without package
+
+### Component
 
 ```bash
-class DropdownMenuExample extends StatefulWidget {
-  const DropdownMenuExample({super.key});
-
-  @override
-  State<DropdownMenuExample> createState() => _DropdownMenuExampleState();
-}
-
-class _DropdownMenuExampleState extends State<DropdownMenuExample> {
-  @override
-  final _formKey = GlobalKey<FormState>();
-  String? dropdownValue;
-
-  Widget build(BuildContext context) {
-    return Container(
-      child: Form(
+      return Form(
           key: _formKey,
           child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 80),
@@ -1804,18 +1792,16 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample> {
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                         ),
-                        hint: const Text('Enter Your Value'),
+                        hint: Text('Enter Your Value'),
                         isExpanded: true,
                         icon: Icon(Icons.arrow_downward_outlined),
                         elevation: 4,
-                        value: dropdownValue,
+                        value: dropdownController.dropdownValue,
                         onChanged: (String? newValue) {
-                          setState(() {
-                            dropdownValue = newValue!;
-                          });
+                          dropdownController.dropdownValue = newValue!;
                         },
                         onSaved: (value) {
-                          dropdownValue = value.toString();
+                          dropdownController.dropdownValue = value.toString();
                         },
                         items: <String>['Value1', 'Value2', 'Value3', 'Value4']
                             .map<DropdownMenuItem<String>>((String value) {
@@ -1826,7 +1812,6 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample> {
                         }).toList(),
                       ),
                     ),
-                    //const SizedBox(height: 10),
                     TextButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
@@ -1835,10 +1820,35 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample> {
                       },
                       child: const Text('Submit Button'),
                     ),
-                  ]))),
-    );
-  }
-}
+                  ])));
+```
+
+## DropdownMenu Without package
+
+```bash
+   return DropdownMenu<String>(
+        hintText: 'Select',
+        trailingIcon: Icon(Icons.arrow_drop_down_outlined),
+        leadingIcon: Icon(Icons.calendar_month),
+        width: 250,
+        errorText: dropdownController.isOpen ? 'Error text' : null,
+        onSelected: (String? value) {
+          dropdownController.dropdownValue = value!;
+        },
+        dropdownMenuEntries: dropdownController.list
+            .map<DropdownMenuEntry<String>>((String value) {
+          return DropdownMenuEntry<String>(value: value, label: value);
+        }).toList(),
+      );
+ ```
+
+### Controller
+
+```bash
+  String? dropdownValue;
+  bool isOpen = false;
+  List<String> list = <String>['Value1', 'Value2', 'Value3', 'Value4'];
+ 
 ```
 
 

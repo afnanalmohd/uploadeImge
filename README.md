@@ -2719,6 +2719,7 @@ class Skeleton extends StatelessWidget {
  ```
 
 ### Component
+
  ```bash
 controller.hours.value =
           controller.strDigits(controller.myduration.inHours.remainder(24));
@@ -2754,14 +2755,108 @@ controller.hours.value =
         ),
       );
 
+ ```
+
+## MediaQuery
+
+The Iphone 14 screen size in pixels is 844 x 390 :
+
+ ```bash
+
+    final size = MediaQuery.of(context).size;
+
+ ```
+
+## Width
+
+ ```bash
+
+size.width
+
+2 = size.width * 0.005
+
+4 = size.width * 0.01
+
+6 = size.width * 0.015
+
+8 = size.width * 0.02
+
+10 = size.width * 0.025
+
+12 = size.width * 0.03
+
+14 = size.width * 0.035
+
+16 = size.width * 0.040
+
+18 = size.width * 0.045
+
+20 = size.width * 0.05
+
+22 = size.width * 0.055
+
+24 = size.width * 0.06
+
+26 = size.width * 0.065
+
+28 = size.width * 0.07
+
+30 = size.width * 0.075
+
+32 = size.width * 0.080
+
+380 = size.width * 0.97
+
+ ```
+
+
+## Height
+
+ ```bash
+
+size.height
+
+2 = size.height * 0.0023
+
+4 = size.height * 0.0047
+
+6 = size.height * 0.007
+
+8 = size.height * 0.0094
+
+10 = size.height * 0.011
+
+12 = size.height * 0.014
+
+14 = size.height * 0.016
+
+16 = size.height * 0.018
+
+18 = size.height * 0.021
+
+20 = size.height * 0.023
+
+22 = size.height * 0.026
+
+24 = size.height * 0.028
+
+26 = size.height * 0.03
+
+28 = size.height * 0.033
+
+30 = size.height * 0.035
+
+32 = size.height * 0.037
 
 
  ```
- 
 
 
+# Data Persistence
 
-# Data persistence
+## Firebase
+
+https://github.com/The-Garage-Tech-Team/auth_crud_map_template
 
 ## Local database (SQLite)
 

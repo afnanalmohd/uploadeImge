@@ -1766,20 +1766,7 @@ DropdownButton2(
 ### Component
 
 ```bash
-    return Form(
-        key: _formKey,
-        child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 80),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.all(16),
-                  hintText: 'Enter Your Full Name.',
-                  hintStyle: const TextStyle(fontSize: 14),
-                ),
-              ),
-              GetBuilder<DropdownController>(builder: (_) {
+          GetBuilder<DropdownController>(builder: (_) {
                 return Container(
                   width: 350,
                   child: DropdownButtonFormField<String>(
@@ -1813,16 +1800,6 @@ DropdownButton2(
                   ),
                 );
               }),
-              //const SizedBox(height: 10),
-              TextButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    _formKey.currentState!.save();
-                  }
-                },
-                child: const Text('Submit Button'),
-              ),
-            ])));
 ```
 
 ## DropdownMenu

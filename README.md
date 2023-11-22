@@ -1761,6 +1761,77 @@ DropdownButton2(
  update();
  }
 ```
+## DropDownButtonFormField 
+
+### Component
+
+```bash
+          GetBuilder<DropdownController>(builder: (_) {
+                return Container(
+                  width: 350,
+                  child: DropdownButtonFormField<String>(
+                    validator: (value) {
+                      if (value == null) {
+                        return 'Please select Value';
+                      }
+                      return null;
+                    },
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                    ),
+                    hint: Text('Enter Your Value'),
+                    isExpanded: true,
+                    icon: Icon(Icons.arrow_downward_outlined),
+                    elevation: 4,
+                    value: dropdownController.dropdownValue,
+                    onChanged: (String? newValue) {
+                      dropdownController.dropdownValue = newValue!;
+                    },
+                    onSaved: (value) {
+                      dropdownController.dropdownValue = value.toString();
+                    },
+                    items: <String>['Value1', 'Value2', 'Value3', 'Value4']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                );
+              }),
+```
+
+## DropdownMenu
+
+```bash
+    return GetBuilder<DropdownController>(builder: (_) {
+      return DropdownMenu<String>(
+        hintText: 'Select',
+        trailingIcon: Icon(Icons.arrow_drop_down_outlined),
+        leadingIcon: Icon(Icons.calendar_month),
+        width: 250,
+        errorText: dropdownController.isOpen ? 'Error text' : null,
+        onSelected: (String? value) {
+          dropdownController.dropdownValue = value!;
+        },
+        dropdownMenuEntries: dropdownController.list
+            .map<DropdownMenuEntry<String>>((String value) {
+          return DropdownMenuEntry<String>(value: value, label: value);
+        }).toList(),
+      );
+    });
+ ```
+
+### Controller
+
+```bash
+  String? dropdownValue;
+  bool isOpen = false;
+  List<String> list = <String>['Value1', 'Value2', 'Value3', 'Value4'];
+ 
+```
+
 
 ##
 

@@ -1,2 +1,1 @@
-class Service {
-}
+class Service {}

@@ -9,3 +9,4 @@ String replaceArabicNumber(String input) {
   }
   return input;
 }
+

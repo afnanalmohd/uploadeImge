@@ -1,20 +1,16 @@
 import 'dart:convert';
 import 'package:http/http.dart' as https;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:http_interceptor/http/intercepted_client.dart';
-import 'header_interceptor.dart';
+import 'http_interceptor.dart';
 
 class Http {
   Http._();
 
   static Http get http => Http._();
 
-  final _client = InterceptedClient.build(
-    interceptors: [HeaderInterceptor()],
-  );
+  final _client = HttpInterceptor();
 
   String? get baseUrl => dotenv.env['BASE_URL'];
-  static String? get baseUrlForImages => dotenv.env['IMAGE_BASE_URL'];
 
   //GET request
   Future<https.Response> getRequest({

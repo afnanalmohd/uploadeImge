@@ -16,47 +16,47 @@ ThemeData lightThemeData() {
     dividerColor: Colors.transparent,
     fontFamily: 'Examle',
     textTheme: CustomTextTheme.textTheme(),
-    unselectedWidgetColor: greyColor,
-    hintColor: greyColor,
-    indicatorColor: greyColor,
-    scaffoldBackgroundColor: whiteColor,
-    iconTheme: const IconThemeData(color: greyColor),
-    appBarTheme: const AppBarTheme(
-        systemOverlayStyle: SystemUiOverlayStyle(
+    unselectedWidgetColor: AppColor.greyColor,
+    hintColor: AppColor.greyColor,
+    indicatorColor: AppColor.greyColor,
+    scaffoldBackgroundColor: Colors .grey,
+    iconTheme:  IconThemeData(color: AppColor.greyColor,),
+    appBarTheme:  AppBarTheme(
+        systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
           statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
           statusBarBrightness: Brightness.light,
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
-        iconTheme: IconThemeData(color: blackColor)),
+        iconTheme: IconThemeData(color: AppColor.blackColor,)),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-      textStyle: const TextStyle(
+      textStyle:  TextStyle(
         fontFamily: 'GE-SS-Two',
         fontWeight: FontWeight.w500,
-        color: whiteColor,
+        color: AppColor.whiteColor,
         fontSize: 16,
       ),
-      disabledBackgroundColor: blackColor,
-      disabledForegroundColor: whiteColor,
+      disabledBackgroundColor: AppColor.blackColor,
+      disabledForegroundColor: AppColor.whiteColor,
       minimumSize: const Size(398, 45),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       elevation: 0.0,
-      backgroundColor: blackColor,
+      backgroundColor: AppColor.blackColor,
     )),
 
     inputDecorationTheme: InputDecorationTheme(
 
-      fillColor: whiteColor,
-      hintStyle: const TextStyle(
+      fillColor: AppColor.whiteColor,
+      hintStyle:  TextStyle(
         fontFamily: 'GE-SS-Two',
         fontWeight: FontWeight.w300,
-        color: greyColor,
+        color: AppColor.greyColor,
         fontSize: 16,
       ),
-      prefixIconColor: greyColor,
-      suffixIconColor: greyColor,
+      prefixIconColor: AppColor.greyColor,
+      suffixIconColor: AppColor.greyColor,
       focusedErrorBorder: UnderlineInputBorder(
         borderRadius: BorderRadius.circular(16),
         borderSide: BorderSide.none,
@@ -79,82 +79,82 @@ ThemeData lightThemeData() {
 
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        disabledBackgroundColor: greyColor,
-        foregroundColor: greyColor,
+        disabledBackgroundColor: AppColor.greyColor,
+        foregroundColor: AppColor.greyColor,
       ),
     ),
     radioTheme: RadioThemeData(
-      fillColor: MaterialStateProperty.all(blackColor),
+      fillColor: MaterialStateProperty.all(AppColor.blackColor,),
       splashRadius: 20,
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-      foregroundColor: blackColor,
-      textStyle: const TextStyle(
+      foregroundColor: AppColor.blackColor,
+      textStyle:  TextStyle(
         fontFamily: 'GE-SS-Two',
         fontWeight: FontWeight.w300,
-        color: blackColor,
+        color: AppColor.blackColor,
         fontSize: 16,
       ),
-      side: const BorderSide(color: blackColor),
-      disabledBackgroundColor: blackColor,
+      side:  BorderSide(color: AppColor.blackColor,),
+      disabledBackgroundColor: AppColor.blackColor,
       minimumSize: const Size(398, 37),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       elevation: 0.0,
-      backgroundColor: whiteColor,
+      backgroundColor: AppColor.whiteColor,
     )),
     checkboxTheme: CheckboxThemeData(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(3),
       ),
-      fillColor: MaterialStateProperty.all(blackColor),
-      checkColor: MaterialStateProperty.all(whiteColor),
+      fillColor: MaterialStateProperty.all(AppColor.blackColor,),
+      checkColor: MaterialStateProperty.all(AppColor.whiteColor),
     ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: whiteColor,
+    bottomNavigationBarTheme:  BottomNavigationBarThemeData(
+      backgroundColor: AppColor.whiteColor,
       elevation: 0.0,
-      selectedItemColor: blackColor,
-      unselectedItemColor: greyColor,
+      selectedItemColor: AppColor.blackColor,
+      unselectedItemColor: AppColor.greyColor,
     ),
-    drawerTheme: const DrawerThemeData(backgroundColor: whiteColor),
+    drawerTheme:  DrawerThemeData(backgroundColor: AppColor.whiteColor),
     chipTheme: ChipThemeData(
-      secondarySelectedColor: whiteColor,
-      secondaryLabelStyle: const TextStyle(color: blackColor),
-      backgroundColor: whiteColor,
-      disabledColor: whiteColor,
-      selectedColor: whiteColor,
+      secondarySelectedColor: AppColor.whiteColor,
+      secondaryLabelStyle:  TextStyle(color: AppColor.blackColor,),
+      backgroundColor: AppColor.whiteColor,
+      disabledColor: AppColor.whiteColor,
+      selectedColor: AppColor.whiteColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
-        side: const BorderSide(
-          color: greyColor,
+        side:  BorderSide(
+          color: AppColor.greyColor,
         ),
       ),
     ),
     timePickerTheme: TimePickerThemeData(
-      helpTextStyle: const TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: blackColor),
-      confirmButtonStyle: const ButtonStyle(
+      helpTextStyle:  TextStyle(
+          fontSize: 16, fontWeight: FontWeight.bold, color: AppColor.blackColor,),
+      confirmButtonStyle:  ButtonStyle(
         textStyle: MaterialStatePropertyAll(
-          TextStyle(color: blackColor),
+          TextStyle(color: AppColor.blackColor,),
         ),
       ),
-      inputDecorationTheme: const InputDecorationTheme(
+      inputDecorationTheme:  InputDecorationTheme(
         isDense: true,
         isCollapsed: true,
         activeIndicatorBorder: BorderSide(
-          color: errorColor,
+          color: AppColor.redColor,
           width: 1,
         ),
-        errorStyle: TextStyle(fontSize: 1),
-        labelStyle: TextStyle(fontSize: 50, color: blackColor),
-        contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+        errorStyle: const TextStyle(fontSize: 1),
+        labelStyle: TextStyle(fontSize: 50, color: AppColor.blackColor,),
+        contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
         focusedErrorBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: errorColor,
+              color: AppColor.redColor,
               width: 1,
             ),
             gapPadding: 0),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide.none,
         ),
       ),
@@ -163,12 +163,12 @@ ThemeData lightThemeData() {
         fontWeight: FontWeight.w400,
       ),
       hourMinuteColor: MaterialStateColor.resolveWith((states) =>
-          states.contains(MaterialState.selected) ? whiteColor : whiteColor),
+          states.contains(MaterialState.selected) ? AppColor.whiteColor : AppColor.greenColor),
       hourMinuteTextColor: MaterialStateColor.resolveWith((states) =>
-          states.contains(MaterialState.selected) ? blackColor : greyColor),
+          states.contains(MaterialState.selected) ? AppColor.blackColor : AppColor.greyColor,),
     ),
-    textSelectionTheme: const TextSelectionThemeData(
-      cursorColor: greyColor,
+    textSelectionTheme:  TextSelectionThemeData(
+      cursorColor: AppColor.greyColor,
     ),
     snackBarTheme: const SnackBarThemeData(
         actionTextColor: Colors.white,

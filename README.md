@@ -8,11 +8,15 @@
 
 In  **The Garage** technology company, our primary goal is to innovate technological solutions to address our team's challenges. Therefore, our team is developing an application to manage meeting room booking systems. Additionally, our team is developing a community inside the garage to connect the company together.
 
-**The Garage Services Application** was completed by <a href="https://thegarage.sa">TheGarage</a>
-mobile application development team. It is built using <a href="https://docs.flutter.dev/get-started/install"> Flutter</a>.
+**The Garage Services Application** was completed by <a href="https://thegarage.sa">TheGarage</a> development team.
+FrontEnd mobile by  built by  using <a href="https://docs.flutter.dev/get-started/install"> Flutter</a>.
 The team used <a href="https://pub.dev/packages/get">Getx</a> framework for state management.
+BackEnd team buliding by using <a href="[https://docs.flutter.dev/get-started/install](https://www.python.org/doc/)">Python</a>.
+
+
 Additionally, The primary objective of writing 
 content is to ensure it results in clean code that is easy to read, maintain, understand, and modify by following a structured and consistent format.
+Also this code develpoing in dark and light mood , and two languge English and arabic .
 
 
 
@@ -41,7 +45,7 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 
 **Ui/UX Designer Team**
   - Hanan Alhareth.
-  - Atheer Alshaheen. 
+  - Atheer Alshaheen.
 
 **Flutter Developers Team**
       
@@ -51,6 +55,10 @@ content is to ensure it results in clean code that is easy to read, maintain, un
  -  Joud Almahdi.
  -  Khairiah Alayyafi،
  -  Noura Alnafea.
+
+ **Backend Team**
+ -  Omer Alwahiby.
+ -  Nourh Alsaadan.
 
  **Quality Assurance Team**
  -  Ahlam Albalawi.

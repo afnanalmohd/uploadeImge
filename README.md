@@ -32,13 +32,24 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 
 ## 🦸‍♀️  SuperHero  
 
+**Business Analysis Team**
+  - Bushra Alzahrani.
+
+** Ui/UX Designer Team**
+  - Hanan Alhareth.
+  -  Atheer Alshaheen. 
+
+**Flutter Developers Team**
+      
  -  Sirin Algadi.
  -  Afnan Almohammdi. 
- -  Ahlam Albalawi.
  -  Hanan Asiri.
  -  Joud Almahdi.
  -  Khairiah Alayyafi،
- -  Razan Ajohani.
+ -  Noura Alnafea.
+
+    **Quality Assurance Team*
+ -  Ahlam Albalawi.
 
   
 

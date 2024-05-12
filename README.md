@@ -25,9 +25,9 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 
 - [Authentication](#authentication) : to login uesr.
 - [Booking](#booking) : Used to making booking in .
-- [Community](#community) : Components for grouping in defined area.
-- [Map](#map) : User movement within the application.
-- [Selection](#selection) : That allow users to make decisions .
+- [Community](#community) :
+- [Map](#map) : 
+
 
 
 ##

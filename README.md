@@ -16,6 +16,7 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 FrontEnd mobile by  built by  using <a href="https://docs.flutter.dev/get-started/install"> Flutter</a>.
 The team used <a href="https://pub.dev/packages/get">Getx</a> framework for state management.
 
+
 <br>
 BackEnd team buliding by using <a href="https://www.python.org/doc/">Python</a> develpoing language.
 

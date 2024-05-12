@@ -37,20 +37,20 @@ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for stat
 - [Team](#team) 
 
 
-### Authentication <a id="authentication"></a>
+## Authentication <a id="authentication"></a>
 
 
 
 
 
-### Languages <a id="languages"></a>
+## Languages <a id="languages"></a>
 
 [![Arabic](https://img.shields.io/badge/Language-Arabic-blue?style=for-the-badge)](README.md)
 <br>
 [![English](https://img.shields.io/badge/Language-English-yellow?style=for-the-badge)](README.md)
 
 
-### SuperHero <a id="team"></a>   
+## SuperHero <a id="team"></a>   
 
 **Business Analysis Team**
   - Bushra Alzahrani.

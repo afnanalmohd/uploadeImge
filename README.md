@@ -43,7 +43,7 @@ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for stat
 
 
 
-## Languages <a id="languages"></a>
+## 🌍 Languages <a id="languages"></a>
 
 [![Arabic](https://img.shields.io/badge/Language-Arabic-blue?style=for-the-badge)](README.md)
 <br>
@@ -52,14 +52,14 @@ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for stat
 
 ## 🚀 SuperHero <a id="team"></a>   
 
-**Business Analysis Team** 📑
+📑**Business Analysis Team** 📑
   - Bushra Alzahrani.
 
-**Ui/UX Designer Team** 🎨
+🎨**Ui/UX Designer Team** 
   - Hanan Alhareth.
   - Atheer Alshaheen.
 
-**Flutter Developers Team**📱
+📱**Flutter Developers Team**
       
  -  Sirin Algadi.
  -  Afnan Almohammdi. 
@@ -68,11 +68,11 @@ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for stat
  -  Khairiah Alayyafi،
  -  Noura Alnafea.
 
- **Backend Team** 🛠️
+🛠️ **Backend Team** 
  -  Omer Alwahiby.
  -  Nourh Alsaadan.
 
- **Quality Assurance Team**🔦
+🔦 **Quality Assurance Team**
  -  Ahlam Albalawi.
 
   

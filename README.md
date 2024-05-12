@@ -39,13 +39,13 @@ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for stat
 **The Garage Services Application** are a collection of features, divided into **five components**:
 </b></b>
 
-- [Authentication](#authentication)
+- [Splash & Authentication](#authentication)
 - [Booking](#booking)
 - [Languages](#languages) 
 - [SuperHero](#team) 
 
 
-## Authentication <a id="authentication"></a>
+## Splash & Authentication screen  <a id="authentication"></a>
 
 
 

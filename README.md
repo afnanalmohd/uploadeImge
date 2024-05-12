@@ -12,6 +12,7 @@ In  **The Garage** technology company, our primary goal is to innovate technolog
 <br>
 FrontEnd mobile by  built by  using <a href="https://docs.flutter.dev/get-started/install"> Flutter</a>.
 The team used <a href="https://pub.dev/packages/get">Getx</a> framework for state management.
+
 <br>
 BackEnd team buliding by using <a href="https://www.python.org/doc/">Python</a> develpoing language.
 
@@ -38,6 +39,13 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 
 ![authentication]() <a id="authentication"></a>
  this section is for 
+
+
+
+ ### Languages:
+
+[![English](https://img.shields.io/badge/Language-English-yellow?style=for-the-badge)](README.md)
+[![Arabic](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](README.md)
   
 ![Team]() <a id="team"></a>
 

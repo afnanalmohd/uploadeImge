@@ -6,7 +6,7 @@
 
 <br>
 
-As a technology company, our primary goal is to innovate technological solutions to address our team's challenges. Therefore, our team is developing an application to manage meeting room booking systems. Additionally, our team is developing a community inside the garage to connect the company together.
+In  **The Garage technology company**, our primary goal is to innovate technological solutions to address our team's challenges. Therefore, our team is developing an application to manage meeting room booking systems. Additionally, our team is developing a community inside the garage to connect the company together.
 
 **The Garage Services Application** was completed by <a href="https://thegarage.sa">TheGarage</a>
 mobile application development team. It is built using <a href="https://docs.flutter.dev/get-started/install"> Flutter</a>.

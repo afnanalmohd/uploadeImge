@@ -18,7 +18,7 @@ BackEnd team buliding by using <a href="https://www.python.org/doc/">Python</a> 
 
 Additionally, The primary objective of writing 
 content is to ensure it results in clean code that is easy to read, maintain, understand, and modify by following a structured and consistent format.
-Also this code develpoing in dark and light mood , and two languge English and arabic .
+
 
 
 

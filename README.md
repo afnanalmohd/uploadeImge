@@ -6,13 +6,14 @@
 
 <br>
 
+As a technology company, our primary goal is to innovate technological solutions to address our team's challenges. Therefore, our team is developing an application to manage meeting room booking systems. Additionally, our team is developing a community inside the garage to connect the company together.
+
 **The Garage Services Application** was completed by <a href="https://thegarage.sa">TheGarage</a>
 mobile application development team. It is built using <a href="https://docs.flutter.dev/get-started/install"> Flutter</a>.
 The team used <a href="https://pub.dev/packages/get">Getx</a> framework for state management.
 Additionally, The primary objective of writing 
 content is to ensure it results in clean code that is easy to read, maintain, understand, and modify by following a structured and consistent format.
 
-As a technology company, our main objective is to innovate technological solutions to address various challenges, such as application-based room booking systems.
 
 
 <br>

@@ -52,7 +52,7 @@ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for stat
 
 ## 🚀 SuperHero <a id="team"></a>   
 
-📑**Business Analysis Team** 📑
+📑**Business Analysis Team** 
   - Bushra Alzahrani.
 
 🎨**Ui/UX Designer Team** 

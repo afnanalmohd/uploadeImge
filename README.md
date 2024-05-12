@@ -1,7 +1,7 @@
-<img align="left" width="70" height="full" src="https://github.com/afnanalmohd/uploadeImge/assets/53023171/a43b6c06-1ba8-43ed-9e5d-9e8eae93276e" alt="thegaragelogo" >
+<img align="left" width="100" height="full" src="https://github.com/afnanalmohd/uploadeImge/assets/53023171/a43b6c06-1ba8-43ed-9e5d-9e8eae93276e" alt="thegaragelogo" >
 
 # The Garage Services Application
-![Layer 1]()
+
 
 
 <br>

@@ -48,7 +48,7 @@ content is to ensure it results in clean code that is easy to read, maintain, un
  -  Khairiah Alayyafi،
  -  Noura Alnafea.
 
- **Quality Assurance Team*
+ **Quality Assurance Team**
  -  Ahlam Albalawi.
 
   

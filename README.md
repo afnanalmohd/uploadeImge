@@ -34,7 +34,7 @@ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for stat
 - [Authentication](#authentication)
 - [Booking](#booking)
 - [Languages](#languages) 
-- [Team](#team) 
+- [SuperHero](#team) 
 
 
 ## Authentication <a id="authentication"></a>

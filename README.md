@@ -30,6 +30,10 @@ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for stat
 **The Garage Services Application** are a collection of features, divided into **five components**:
 </b></b>
 
+
+- [Getting Started](#started)
+- [Folder Structure](#folder)
+- [Technologies](#technologies)
 - [Splash & Authentication](#authentication)
 - [Booking](#booking)
 - [Languages](#languages) 
@@ -38,7 +42,7 @@ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for stat
 
 
 
-## 🚀  Getting Started  with  The Garage Services
+## 🚀  Getting Started  with  The Garage Services <a id="started"></a>
 
 Before installing , make sure you have the following prerequisites installed:
 
@@ -55,7 +59,7 @@ Once you have the prerequisites installed, follow these steps to install:
 
 
 
-## 🔎 Folder Structure
+## 🔎 Folder Structure <a id="folder"></a>
 
 This Project follows the Model-View-Controller (MVC) design pattern and uses GetX for state management. The primary directory structure consists of three main folders: Common, Core, and Features.
 
@@ -103,7 +107,7 @@ mbshir
 
 
 
-## 💼 Technologies  
+## 💼 Technologies  <a id="technologies"></a>
 
 
 | library  |         Usage 
@@ -124,7 +128,8 @@ mbshir
 [![English](https://img.shields.io/badge/Language-English-yellow?style=for-the-badge)](README.md)
 
 
-
+## Splash & Authentication screen  <a id="authentication"></a>  
+  
 
 ## 🚀 SuperHero <a id="team"></a>   
 
@@ -152,7 +157,6 @@ mbshir
  -  Ahlam Albalawi.
 
 
-## Splash & Authentication screen  <a id="authentication"></a>  
-  
+
 
 

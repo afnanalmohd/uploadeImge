@@ -31,22 +31,22 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 </b></b>
 
 - [Authentication](#authentication)
-- [Booking](#booking) 
+- [Booking](#booking)
+- [Languages](#languages) 
 - [Team](#team) 
 
 
 ##
 
 ![authentication]() <a id="authentication"></a>
- this section is for 
 
 
 
- ### Languages:
+
+ ### ![Languages]() <a id="languages"></a>
 
 [![English](https://img.shields.io/badge/Language-English-yellow?style=for-the-badge)](README.md)
-```
-```
+<br>
 [![Arabic](https://img.shields.io/badge/Language-Arabic-blue?style=for-the-badge)](README.md)
   
 ![Team]() <a id="team"></a>

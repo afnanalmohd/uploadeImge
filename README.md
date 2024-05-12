@@ -41,15 +41,14 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 
 
 
- ### ![Languages] mmm <a id="languages"></a>
+### Languages <a id="languages"></a>
 
 [![Arabic](https://img.shields.io/badge/Language-Arabic-blue?style=for-the-badge)](README.md)
 <br>
 [![English](https://img.shields.io/badge/Language-English-yellow?style=for-the-badge)](README.md)
 
- ![Team](Team ) <a id="team"></a>
 
-## 🦸‍♀️  SuperHero  
+### SuperHero <a id="team"></a>   
 
 **Business Analysis Team**
   - Bushra Alzahrani.

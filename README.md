@@ -35,7 +35,7 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 **Business Analysis Team**
   - Bushra Alzahrani.
 
-** Ui/UX Designer Team**
+**Ui/UX Designer Team**
   - Hanan Alhareth.
   -  Atheer Alshaheen. 
 
@@ -48,7 +48,7 @@ content is to ensure it results in clean code that is easy to read, maintain, un
  -  Khairiah Alayyafi،
  -  Noura Alnafea.
 
-    **Quality Assurance Team*
+ **Quality Assurance Team*
  -  Ahlam Albalawi.
 
   

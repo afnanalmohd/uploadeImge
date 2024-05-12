@@ -6,7 +6,7 @@
 
 <br>
 
-**Material Components Widgets** was completed by <a href="https://thegarage.sa">TheGarage</a>
+** The Garage Services Application** was completed by <a href="https://thegarage.sa">TheGarage</a>
 mobile application development team. It is built using <a href="https://docs.flutter.dev/get-started/install"> Flutter</a>.
 The team used <a href="https://pub.dev/packages/get">Getx</a> framework for state management.
 Additionally, The primary objective of writing widget

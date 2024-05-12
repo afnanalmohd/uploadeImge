@@ -45,7 +45,9 @@ content is to ensure it results in clean code that is easy to read, maintain, un
  ### Languages:
 
 [![English](https://img.shields.io/badge/Language-English-yellow?style=for-the-badge)](README.md)
-[![Arabic](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](README.md)
+```
+```
+[![Arabic](https://img.shields.io/badge/Language-Arabic-blue?style=for-the-badge)](README.md)
   
 ![Team]() <a id="team"></a>
 

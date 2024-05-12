@@ -20,19 +20,19 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 
 ## 🗺️ Contents
 
-**Material Components** are a collection of UI widgets and design guidelines, divided into **six components**:
+**The Garage Services Application** are a collection of features, divided into **five components**:
 </b></b>
 
-- [Actions](#action) : Interactive elements which trigger actions when clicked .
-- [Communication](#communication) : Used to convey information to the user.
-- [Containment](#containment) : Components for grouping in defined area.
-- [Navigation](#navigation) : User movement within the application.
+- [Authentication](#authentication) : to login uesr.
+- [Booking](#booking) : Used to making booking in .
+- [Community](#community) : Components for grouping in defined area.
+- [Map](#map) : User movement within the application.
 - [Selection](#selection) : That allow users to make decisions .
-- [Text Inputs](#text_inputs) :Elements for entering text .
+
 
 ##
 
-![action](https://github.com/afnanalmohd/task_flutterr/assets/53023171/6bc3c5d9-38db-4685-95c1-938af410e5c1) <a id="action"></a>
+![authentication]() <a id="authentication"></a>
 
   
 
@@ -43,7 +43,7 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 
 **Ui/UX Designer Team**
   - Hanan Alhareth.
-  -  Atheer Alshaheen. 
+  - Atheer Alshaheen. 
 
 **Flutter Developers Team**
       

@@ -36,7 +36,7 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 - [Team](#team) 
 
 
-##
+
 
 ![authentication]() <a id="authentication"></a>
 

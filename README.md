@@ -29,9 +29,9 @@ Also this code develpoing in dark and light mood , and two languge English and a
 **The Garage Services Application** are a collection of features, divided into **five components**:
 </b></b>
 
-- [Authentication](#authentication) : to login uesr.
-- [Booking](#booking) : Used to making booing for meeting roon.. 
-
+- [Authentication](#authentication)
+- [Booking](#booking) 
+- [Team](#team) 
 
 
 ##
@@ -39,6 +39,7 @@ Also this code develpoing in dark and light mood , and two languge English and a
 ![authentication]() <a id="authentication"></a>
  this section is for 
   
+![Team]() <a id="team"></a>
 
 ## 🦸‍♀️  SuperHero  
 

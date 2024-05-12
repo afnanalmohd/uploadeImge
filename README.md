@@ -13,7 +13,7 @@ In  **The Garage** technology company, our primary goal is to innovate technolog
 FrontEnd mobile by  built by  using <a href="https://docs.flutter.dev/get-started/install"> Flutter</a>.
 The team used <a href="https://pub.dev/packages/get">Getx</a> framework for state management.
 <br>
-BackEnd team buliding by using <a href="[https://docs.flutter.dev/get-started/install](https://www.python.org/doc/)">Python</a>.
+BackEnd team buliding by using <a href="https://www.python.org/doc/">Python</a>.
 
 
 Additionally, The primary objective of writing 

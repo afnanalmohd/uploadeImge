@@ -24,16 +24,14 @@ content is to ensure it results in clean code that is easy to read, maintain, un
 </b></b>
 
 - [Authentication](#authentication) : to login uesr.
-- [Booking](#booking) : Used to making booking in .
-- [Community](#community) :
-- [Map](#map) : 
+- [Booking](#booking) : Used to making booing for meeting roon.. 
 
 
 
 ##
 
 ![authentication]() <a id="authentication"></a>
-
+ this section is for 
   
 
 ## 🦸‍♀️  SuperHero  

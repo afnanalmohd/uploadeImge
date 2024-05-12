@@ -52,8 +52,13 @@ Once you have the prerequisites installed, follow these steps to install:
 
 1. Clone the project repository to your local machine.
 2. Navigate to the root directory of the project.
-3. Run `flutter pub get` to install the required dependencies.
-4. Run `flutter run` to launch the app.
+3. Rename .env.example to .env and fill in the necessary fields.
+   `bash
+ BASE_URL= "https://YOUR_BASE_URL"
+ IMAGE_BASE_URL= "https://YOUR_BASE_URL"
+ ``` 
+5. Run `flutter pub get` to install the required dependencies.
+6. Run `flutter run` to launch the app.
 
 
 

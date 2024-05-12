@@ -53,7 +53,7 @@ Once you have the prerequisites installed, follow these steps to install:
 1. Clone the project repository to your local machine.
 2. Navigate to the root directory of the project.
 3. Rename .env.example to .env and fill in the necessary fields.
-   `bash
+ ``` 
  BASE_URL= "https://YOUR_BASE_URL"
  IMAGE_BASE_URL= "https://YOUR_BASE_URL"
  ``` 

@@ -5,7 +5,7 @@
 
 <br>
 
-In  **The Garage** technology company, our primary goal is to innovate technological solutions to address our team's challenges. Therefore, our team is developing an application to manage meeting room booking systems inside the buliding. Additionally, our team is developing a community to connect the company together.
+At  **The Garage** technology company, our primary goal is to innovate technological solutions to address our team's challenges. Therefore, our team is developing an application to manage meeting room booking systems inside the buliding. Additionally, our team is developing a community to connect the company together.
 <br>
 
 **The Garage Services Application** was completed by <a href="https://thegarage.sa">TheGarage</a> development team. Additionally ,The primary objective of writing 

@@ -25,7 +25,7 @@ The team used <a href="https://pub.dev/packages/get">Getx</a> framework for stat
 
 <br>
 
-## 🗺️ Contents
+## 🚧 Contents
 
 **The Garage Services Application** are a collection of features, divided into **components**:
 </b></b>

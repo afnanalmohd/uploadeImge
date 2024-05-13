@@ -128,7 +128,7 @@ the_garage_service
 | <a href="https://pub.dev/packages/syncfusion_flutter_datepicker"> Syncfusion date picker</a>|To select date 
 | <a href="https://pub.dev/packages/sentry_flutter">Sentry</a>|Capture errors 
 | <a href="https://pub.dev/packages/get_storage">Get storage</a>| Fast key-value in memory|
-| <a href="https://pub.dev/packages/flutter_native_splash">Customizing this native splash screen </a>||
+| <a href="https://pub.dev/packages/flutter_native_splash">splash screen </a>|Customizing this native splash screen|
 
 ## 🌍 Languages <a id="languages"></a>
 

@@ -69,25 +69,30 @@ Once you have the prerequisites installed, follow these steps to install:
 This Project follows the Model-View-Controller (MVC) design pattern and uses GetX for state management. The primary directory structure consists of three main folders: Common, Core, and Features.
 
 ```bash
-mbshir
+the_garage_service
 ├─ ios/
 ├─ android/
 ├─ assets/
+│  ├─font/
 │  ├─ images/
-│  ├─ icons/
-│  ├─ lottie/
 ├─ lib/
 │  ├─ common/
+│  │  ├─ blur_widget/
+│  │  ├─ helper/
+│  │  ├─ widget/
 │  ├─ core/
 │  │  ├─ binding/
 │  │  ├─ constant/
+│  │  ├─ enum/
+│  │  ├─ extension/
 │  │  ├─ localization/
 │  │  ├─ route/
 │  │  ├─ theme/
 │  ├─ feature/
+│  │  ├─ authentication/
 │  │  ├─ controller/
-│  │  ├─ service/
 │  │  ├─ model/
+│  │  ├─ service/
 │  │  ├─ screen/
 │  │  ├─ widget/
 │  ├─ main.dart
@@ -98,7 +103,7 @@ mbshir
 ```
 ### Common:
 
- <a href="https://github.com/The-Garage-Tech-Team/the_garage_services/tree/main/lib/common"> Common file </a> is directory typically contains code shared throughout the application. Common elements found here include utility classes and custom widgets.
+ <a href="https://github.com/The-Garage-Tech-Team/the_garage_services/tree/main/lib/common"> Common file </a> is directory typically contains code shared throughout the application. Common elements found here include utility classes and custom widgets.This like blur widgert, helper,
 
 
 ### Core

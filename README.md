@@ -118,11 +118,10 @@ mbshir
 | library  |         Usage 
 | :-------- | :------------------------- |
 | <a href="https://pub.dev/packages/get">Getx</a> |  State management , navigation, dependency management |
-| <a href="https://pub.dev/packages/timer_count_down">Timer Count Down</a> | Highly customizable countdown and onFinished callbacks |
-| <a href="https://pub.dev/packages/stop_watch_timer">Stop Watch Timer</a> | Simple CountUp / CountDown timer |
-| <a href="https://pub.dev/packages/lottie">Lottie</a>| Animations |
-| <a href="https://pub.dev/packages/google_fonts">Google Fonts</a>|  fonts from Google|
-
+| <a href="https://pub.dev/packages/http">HTTP</a> | library for making HTTP requests |
+| <a href="https://pub.dev/packages/flutter_dotenve">.env</a>|environment That store sensitive information|
+| <a href="https://pub.dev/packages/syncfusion_flutter_datepicker"> Syncfusion date picker</a>|To select date 
+| <a href="https://pub.dev/packages/sentry_flutter">Sentry</a>|Capture errors |
 
 
 

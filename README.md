@@ -124,7 +124,7 @@ the_garage_service
 | :-------- | :------------------------- |
 | <a href="https://pub.dev/packages/get">Getx</a> |  State management , navigation, dependency management |
 | <a href="https://pub.dev/packages/http">HTTP</a> | library for making HTTP requests |
-| <a href="https://pub.dev/packages/flutter_dotenve">.env</a>|environment That store sensitive information|
+| <a href="https://pub.dev/packages/flutter_dotenv">.env</a>|environment That store sensitive information|
 | <a href="https://pub.dev/packages/syncfusion_flutter_datepicker"> Syncfusion date picker</a>|To select date 
 | <a href="https://pub.dev/packages/sentry_flutter">Sentry</a>|Capture errors 
 | <a href="https://pub.dev/packages/get_storage">Get storage</a>| Fast key-value in memory|
